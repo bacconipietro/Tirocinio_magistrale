@@ -23,7 +23,10 @@ cd /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenoms
 
 conda activate downloads
  
-#[eseguire il comando del download per il genoma mitocondriale, essendo un mitogenoma useremo il comando 'gene'. Per i nucleari solitamente si usa 'genome'. Il numero di accessp riportato è un esempio, attenzione è importante la dicitura del numero altrimenti il software non lo riconosce correttamente]
+#[eseguire il comando del download per il genoma mitocondriale, essendo un mitogenoma useremo il comando 'gene'.
+Per i nucleari solitamente si usa 'genome'.
+Il numero di accessp riportato è un esempio,
+attenzione è importante la dicitura del numero altrimenti il software non lo riconosce correttamente]
 
 datasets download gene accession NC_098567.1
 

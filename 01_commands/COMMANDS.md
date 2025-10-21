@@ -1,4 +1,4 @@
-#Comando_awk
+COMANDI GENERICI
 
 Comando per visualizzare un file formato tabella e le sue colonne
 

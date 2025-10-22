@@ -1,7 +1,22 @@
 COMANDI GENERICI
 
-Comando per visualizzare un file formato tabella e le sue colonne
+Caricare un file da computer al terminale
 
+```
+#[Nuovo file modificato caricato sul terminale nella cartella 00_data. Partire dalla directory home del computer]
+
+scp /Desktop/data/Mantodea_dataset.csv STUDENTI^pietro.bacconi@137.204.142.152:/home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/00_data
+
+#[Accedere al server e verificare che il file sia stato caricato. Ora lavorare sulla directory in cui è presente, 00_data.]
+
+cat Mantodea_dataset.csv
+
+#[Caricare un file su DATABIG ha un path diverso. Pertire sempre dalla home del computer]
+
+scp Desktop/data/prova_9AN.txt STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes
+
+```
+Comando per visualizzare un file formato tabella e le sue colonne
 
 ```
 #[stampa di una colonna]
@@ -35,14 +50,6 @@ mkdir NC_098567.1/ && unzip NC_098567.1.zip -d NC_098567.1/
 Modifiche sul dataset ed importo sul terminale. Comandi per contare, ordine alfabetico e stampa
 
 ```
-#[Nuovo file modificato caricato sul terminale nella cartella 00_data. Partire dalla directory home del computer]
-
-scp /Desktop/data/Mantodea_dataset.csv STUDENTI^pietro.bacconi@137.204.142.152:/home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/00_data
-
-#[Accedere al server e verificare che il file sia stato caricato. Ora lavorare sulla directory in cui è presente, 00_data.]
-
-cat Mantodea_dataset.csv
-
 #[Modifichiamo la tabella da csv in tsv, togliamo le virgole. Il comando "sed" sostiusce le virgole con tab]
 
 sed 's/,/\t/g' Mantodea_dataset.csv > Mantodea_dataset.tsv

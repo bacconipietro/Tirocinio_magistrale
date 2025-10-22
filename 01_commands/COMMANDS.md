@@ -72,3 +72,26 @@ awk -F'\t' 'NR > 1 {print $1, $2}' Mantodea_dataset.tsv | sort --unique
 awk -F'\t' '{print $1, $2}' Mantodea_dataset.tsv | sort --unique | wc -l
 
 ```
+SACRICARE UN DATASET (Accession Numbers + Species Name)
+
+```
+paste prova_9AN.txt prova_9species.txt | while IFS=$'\t' read acc species; 
+do
+    echo "Downloading $acc for $species..."
+
+    safe_species=$(echo "$species" | tr ' ' '_' | tr -d '()')
+
+    datasets download gene accession "$acc" --filename "${acc}.zip"
+
+    unzip -o "${acc}.zip" -d "$safe_species"
+
+    echo "✓ Downloaded and extracted to $safe_species"
+done
+
+```
+- Il risultato di paste è preso in input dal while tramite la pipe.
+- Comando paste unisce i due file in modo da poter leggere contemporaneamente l'AN e il nome della specie. La cosa FONDAMENTALE è assicurarsi che i due txt abbiano lo stesso ordine.
+- Nella prima riga dopo il 'do' sto salvando nella nuova variabile safe_species il nome da dare in output tramite echo preso dalla variabile $species, nella quale viene copiato al suo interno il nome di una specie dalla lista del file .txt per ogni iterazione (grazie al comando read). La seconda parte di comando è essenziale per correggere i nomi e togliere potenziali caratteri problematici.
+- Se non esiste la directory non è necessario usare mkdir, il comando unzip -d crea la directory se non esiste.
+
+

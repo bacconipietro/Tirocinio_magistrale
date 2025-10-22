@@ -75,6 +75,8 @@ awk -F'\t' '{print $1, $2}' Mantodea_dataset.tsv | sort --unique | wc -l
 SACRICARE UN DATASET (Accession Numbers + Species Name)
 
 ```
+conda activate downloads
+
 paste prova_9AN.txt prova_9species.txt | while IFS=$'\t' read acc species; 
 do
     echo "Downloading $acc for $species..."

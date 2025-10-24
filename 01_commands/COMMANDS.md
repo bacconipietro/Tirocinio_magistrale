@@ -26,6 +26,27 @@ awk '{ printf $1 }' nome_file.tsv
 awk '{ printf $1 "\t" $2} nome_file.tsv
 
 ```
+Comando "grep"
+```
+#[Visualizzare tutti gli elementi che cominciano con lettera/numero oppure hanno quest parola (esempio con NC)]
+
+grep "NC" AN_Mantodea.txt
+
+#[Contare tutte le righe che hanno quell'elemtento]
+
+grep -c "NC" AN_Mantodea.txt
+
+#[Numerare la riga in cui compare l'elemento]
+
+grep -n "NC" AN_Mantodea.txt
+
+```
+Comando "cut"
+```
+#[Stampa solo le prime due colonne, usabile come input nei loop]
+cut -f1,2 Mantodea_dataset.tsv
+
+```
 
 Scaricare un mitogenoma da NCBI
 

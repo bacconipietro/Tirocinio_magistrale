@@ -40,6 +40,10 @@ grep -c "NC" AN_Mantodea.txt
 
 grep -n "NC" AN_Mantodea.txt
 
+#[Voglio estrarre gli header di un file .fna. Voglio anche contarli]
+grep "^>" gene.fna 
+grep "^>" gene.fna | wc -l
+
 ```
 Comando "cut"
 ```
@@ -93,7 +97,7 @@ awk -F'\t' 'NR > 1 {print $1, $2}' Mantodea_dataset.tsv | sort --unique
 awk -F'\t' '{print $1, $2}' Mantodea_dataset.tsv | sort --unique | wc -l
 
 ```
-SACRICARE UN DATASET (Accession Numbers + Species Name)
+SACRICARE UN DATASET (Accession Numbers + Species Name)     Primo tentativo 22/10/2025
 
 ```
 conda activate downloads
@@ -117,4 +121,42 @@ done
 - Nella prima riga dopo il 'do' sto salvando nella nuova variabile safe_species il nome da dare in output tramite echo preso dalla variabile $species, nella quale viene copiato al suo interno il nome di una specie dalla lista del file .txt per ogni iterazione (grazie al comando read). La seconda parte di comando è essenziale per correggere i nomi e togliere potenziali caratteri problematici.
 - Se non esiste la directory non è necessario usare mkdir, il comando unzip -d crea la directory se non esiste.
 
+SCRIPT DOWNLOAD DI UN DATASET MIGLIORATO
+
+```
+conda activate downloads
+
+cut -f1,2 Mantodea_dataset.tsv |tail -n +2 Mantodea_dataset.tsv | while IFS=$'\t' read acc species; 
+do
+
+echo "Downloading $acc for $species..."
+
+folder_name="${species}_${acc}"
+
+datasets download gene accession "$acc" --include gene,rna,cds,protein,5p-utr,3p-utr,product-report --filename "${species}_${acc}.zip"
+
+unzip -o "${species}_${acc}.zip" -d "$folder_name"
+
+mv "$folder_name"/ncbi_dataset/data/gene.fna "$folder_name"/ncbi_dataset/data/"${species}_${acc}_genes.fna"
+mv "$folder_name"/ncbi_dataset/data/protein.faa "$folder_name"/ncbi_dataset/data/"${species}_${acc}_protein.faa"
+mv "$folder_name"/ncbi_dataset/data/data_report.jsonl "$folder_name"/ncbi_dataset/data/"${species}_${acc}_data_report.jsonl"
+mv "$folder_name"/ncbi_dataset/data/dataset_catalog.jsonl "$folder_name"/ncbi_dataset/data/"${species}_${acc}_dataset_catalog.jsonl"
+mv "$folder_name"/ncbi_dataset/data/product_report.jsonl "$folder_name"/ncbi_dataset/data/"${species}_${acc}_product_report.jsonl"
+
+find "$folder_name" -type f \( -name "*.fasta" -o -name "*.fa" -o -name "*.fna" \) | while read fasta; do
+        sed -i '/^>/ s/ /_/g' "$fasta"
+    done
+
+mv "${species}_${acc}.zip" Mantodea_zip/
+
+echo "✓ Downloaded and extracted to $folder_name"
+
+done
+
+```
+
+-Aggiunto il comando cut per considerare in input solo le prime due colonne
+-Aggiunto --include per scaricare correttamente tutto il contenuto del mitogenoma
+-Aggiunto 5 line per rinominare tutti file ottenuti dall'unzip 
+-Aggiunto comando eliminazione degli spazi negli header
 

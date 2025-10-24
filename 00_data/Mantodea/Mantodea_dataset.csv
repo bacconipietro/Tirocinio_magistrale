@@ -31,7 +31,7 @@ Spilomantis_occipitalis,KX434816.1,15767bp,Gonypetidae,Iridopteryginae,x,KX43481
 Humbertiella_nada_2,KX434857.1,15862bp,Gonypetidae,Gonypetinae,x,
 Humbertiella_nada,NC_030264.1,15866bp,Gonypetidae,Gonypetinae,x,
 Theopompa_milligratulata,KX434849.1,16046bp,Gonypetidae,Gonypetinae,x,KX434849
-Leptomantella_albella,NC_024028.1,15534bp,Leptomantellidae,Leptomantella,x,
+Leptomantella_albella,NC_024028.1,15534bp,Leptomantellidae, ,x,
 Amorphoscelis_chinensis,KX434846.1,15805bp,Hymenopodidae,Acromantinae,x,KX434846
 Sceptuchus_simplex,NC_037206.1,15548bp,Nanomantidae,Nanomantinae,x,
 Miromantis_yunnanensis,KX434810.1,15542bp,Nanomantidae,Tropidomantinae,x,KX434810
@@ -160,3 +160,5 @@ Mantis_religiosa,NC_030265.1,15534bp,Mantidae,Mantinae,x,KU201317
 Hierodula_patellifera,NC_034283.1,16999bp,Mantidae,Hierodulinae,x,KX611803
 Sphodromantis_lineola,NC_037204.1,15474bp,Mantidae,Tenoderinae,x,KY689123
 Statilia_maculata,NC_065760.1,15746bp,Mantidae,Mantinae,x,OK542390
+Leptomantella_tonkinae,OK480879.1,15527bp,Leptomantellidae, ,x
+

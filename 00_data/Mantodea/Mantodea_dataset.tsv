@@ -116,7 +116,7 @@ Parablepharis_kuhlii	KY689117.1	16130bp	Hymenopodidae	Phyllothelyinae	x
 Phyllothelys_breve	NC_086622.1	15456bp	Hymenopodidae	Phyllothelyinae	x	
 Phyllothelys_breve_2	MT024239.1	15896bp	Hymenopodidae	Phyllothelyinae	x	
 Raptrix_fusca	NC_077477.1	15439bp	Acanthopidae	Acontiothespinae	x	
-Leptomantella_sp.	OM202571.1	15525bp	Leptomantellidae		x	
+Leptomantella_sp.	OM202571.1	15525bp	Leptomantellidae  0  x	
 Creobroter_sp.	MW222469.1	15736bp	Hymenopodidae	Hymenopodinae	x	
 Panurgica_fraterculata	PP438770.1	15874bp	Hymenopodidae	Hymenopodinae	UNVERIFIED	
 Ceratocrania_macra	PP438765.1	16012bp	Hymenopodidae	Phyllothelyinae	UNVERIFIED	
@@ -144,7 +144,7 @@ Theopropus_sinecus	NC_086823.1	16023bp	Hymenopodidae	Hymenopodinae	x
 Amantis_wuzhishana	NC_086818.1	15700bp	Gonypetidae	Iridopteryginae	x	
 Tenodera_sp.	OM202552.1	14776bp	Mantidae	Tenoderinae	PARTIAL	
 Gonypeta_sp.	OM177664.1	15475bp	Gonypetidae	Gonypetinae	x	
-Acromantis_japonica	OM202568.1	15573bp	Hymenopodidae	Acromantinae	x	
+Acromantis_japonica	NC_085562.1	15573bp	Hymenopodidae	Acromantinae	x	
 Theopropus_sp.	OM202564.1	15482bp	Hymenopodidae	Hymenopodinae	x	
 Miromantis_sp.	OM202562.1	15186bp	Nanomantidae	Tropidomantinae	x	
 Sinomiopteryx_sp.	OM202561.1	15739bp	Thespidae	Pseudomiopteriginae	x	
@@ -152,7 +152,7 @@ Anaxarcha_graminea	OM202555.1	15941bp	Hymenopodidae	Acromantinae	x
 Anaxarcha_sp.	OM202554.1	15956bp	Hymenopodidae	Acromantinae	x	
 Callibia_diana	NC_077476.1	15820bp	Acanthopidae	Acontistinae	x	
 Haania_vitalisi	KX434845.1	13628bp	Haaniidae	Haaniinae	PARTIAL	
-Metallyticus_sp.	KX434871.1	15491bp	Metallyticidae		x	
+Metallyticus_sp.	KX434871.1	15491bp	Metallyticidae  0  x	
 Parymenopus_davisoni	KX434870.1	15588bp	Hymenopodidae	Hymenopodinae	x	
 Hierodula_longa	OK542392.1	16603bp	Mantidae	Hierodulinae	x	
 Phyllothelys_shaanxiense	KR091863.1	15586bp	Hymenopodidae	Phyllothelyinae	x	
@@ -160,4 +160,4 @@ Mantis_religiosa	NC_030265.1	15534bp	Mantidae	Mantinae	x	KU201317
 Hierodula_patellifera	NC_034283.1	16999bp	Mantidae	Hierodulinae	x	KX611803
 Sphodromantis_lineola	NC_037204.1	15474bp	Mantidae	Tenoderinae	x	KY689123
 Statilia_maculata	NC_065760.1	15746bp	Mantidae	Mantinae	x	OK542390
-Leptomantella_tonkinae	OK480879.1	15527bp	Leptomantellidae		x
+Leptomantella_tonkinae	OK480879.1	15527bp	Leptomantellidae  0  x

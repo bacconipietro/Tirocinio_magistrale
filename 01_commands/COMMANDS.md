@@ -160,3 +160,58 @@ done
 -Aggiunto 5 line per rinominare tutti file ottenuti dall'unzip 
 -Aggiunto comando eliminazione degli spazi negli header
 
+DOWNLOAD NOTES 4/11/2025 
+```
+mkdir -p downloads_only_13 correct_downloads
+set -uo pipefail
+
+while IFS=$'\t' read -r acc;
+
+ do
+    [ -z "$acc" ] && continue
+    echo "Processing ${acc}.."
+    if ! esearch -db nucleotide -query "${acc}" </dev/null | efetch -format gene_fasta > "${acc}.gene_fasta"; then
+       echo "$acc" >> failed_downloads.txt
+       echo "Download "$acc" failed"
+       continue
+    fi
+    [ -s "${acc}.gene_fasta" ] || {
+    echo "${acc}.gene_fasta is empty"
+    echo "$acc" >> failed_downloads.txt
+    rm "${acc}.gene_fasta"
+    continue
+    } 
+       count=$( (grep -c "^>" "${acc}.gene_fasta" 2>/dev/null) || echo 0 )
+    
+    if  [ "$count" -le 13 ]; then
+         
+         sed -i '/^>/ s/ /_/g' ${acc}.gene_fasta
+         echo "$acc" >> downloads_only_13.txt
+         echo "$acc has only $count sequences"
+         mv "${acc}.gene_fasta" downloads_only_13/
+
+       else
+       
+       sed -i '/^>/ s/ /_/g' ${acc}.gene_fasta
+       echo "$acc downloaded correctly with $count sequences"
+       echo "$acc" >> correct_downloads.txt
+       mv "${acc}.gene_fasta" correct_downloads/
+
+    fi
+
+done < AN_Mantodea.txt
+
+```
+#DOWNLOADS FALLITI (7):
+OZ336339.1  assembly   Bolivaria brachyptera
+PP438765.1  unverified Ceratocrania macra
+PP438767.1  unverified Chlidonoptera lestoni
+MN267041.1  unverified Mekongomantis quinquespinosa
+PP438763.1  unverified Astyliasula basinigra
+PP438766.1  unverified Ceratomantis yunnanensis
+PP438770.1  unverified Panurgica fratercula 
+
+#DOWNLOADS SOLO CDS 12_13 (79)
+
+#DOWNLOAD SUCCESFULLY (76)
+

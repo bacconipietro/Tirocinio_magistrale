@@ -215,3 +215,59 @@ PP438770.1  unverified Panurgica fratercula
 
 #DOWNLOAD SUCCESFULLY (76)
 
+
+
+DOWNLOAD NOTES 11/11/2025
+```
+mkdir -p downloads_only_13 correct_downloads
+set -uo pipefail
+ 
+while IFS=$'\t' read species acc;
+
+ do
+    [ -z "$acc" ] && continue
+    echo "Processing ${acc} for ${species}..."
+    if ! esearch -db nucleotide -query "${acc}" </dev/null | efetch -format gene_fasta > "${acc}_${species}.gene_fasta"; then
+       echo "${acc}_${species}" >> failed_downloads.txt
+       echo "Download "${acc}_${species}" failed"
+       continue
+    fi
+    [ -s "${acc}_${species}.gene_fasta" ] || {
+    echo "${acc}_${species}.gene_fasta is empty"
+    echo "${acc}_${species}" >> failed_downloads.txt
+    rm "${acc}_${species}.gene_fasta"
+    continue
+    } 
+       count=$( (grep -c "^>" "${acc}_${species}.gene_fasta" 2>/dev/null) || echo 0 )
+    
+    if  [ "$count" -le 13 ]; then
+         
+         sed -i '/^>/ s/ /_/g' ${acc}_${species}.gene_fasta
+         echo "${acc}_${species}" >> downloads_only_13.txt
+         echo "${acc}_${species} has only $count sequences"
+         mv "${acc}_${species}.gene_fasta" downloads_only_13/
+
+       else
+       
+       sed -i '/^>/ s/ /_/g' ${acc}_${species}.gene_fasta
+       echo "${acc}_${species} downloaded correctly with $count sequences"
+       echo "${acc}_${species}" >> correct_downloads.txt
+       mv "${acc}_${species}.gene_fasta" correct_downloads/
+    fi
+done < C1_C2_Mantodea_dataset.tsv 
+```
+
+
+
+volendo potrebbe funzionare:
+
+```
+<(cut -f 1,2 Mantodea_dataset.tsv) | tail -n +2 Mantodea_dataset.tsv | while IFS=$'\t' read species acc;
+do
+......
+......
+......
+done
+
+```
+

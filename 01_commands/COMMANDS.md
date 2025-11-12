@@ -270,4 +270,39 @@ do
 done
 
 ```
+WRITING NEW HEADERS 12/11/2025
 
+```
+#downloads
+mkdir downloads_simplify
+for file in downloads/*.gene_fasta; do
+    base=$(basename "$file" .gene_fasta)
+    sed -E -e 's/^>lcl\|[^_]+_[0-9]+\.[0-9]+_/>/' -e 's/gene_[0-9]+\_//' -e 's/_\[db_xref=[^]]*\]_//' -e 's/\[location=[^]]*\]_//' -e 's/\[gbkey=[^]]*\]//' "$file" > "downloads_simplify/${base}.fasta"  
+    sed -i -E "s/^(>)/\1${base}_/" "downloads_simplify/${base}.fasta"
+done
+
+
+#downloads_PCGs_13
+mkdir downloads_PCGs_13_simplify
+for file in downloads_PCGs_13/*.gene_fasta; do
+    base=$(basename "$file" .gene_fasta)
+    sed -E -e 's/^>lcl\|[^_]+_[0-9]+\.[0-9]+_/>/' -e 's/gene_[0-9]+\_//' -e 's/\[location=[^]]*\]_//' -e 's/\[gbkey=[^]]*\]//' "$file" > "downloads_PCGs_13_simplify/${base}.fasta"  
+    sed -i -E "s/^(>)/\1cd ..${base}_/" "downloads_PCGs_13_simplify/${base}.fasta"
+done
+
+
+
+#downloads_rRNAs
+mkdir downloads_rRNAs_simplify
+cp downloads_rRNAs/Mantodea_16S.fasta downloads_rRNAs/Mantodea_12S.fasta downloads_rRNAs_simplify/
+for file in downloads_rRNAs_simplify/*.fasta; do
+    base=$(basename "$file" .fasta)
+    sed -i 's/^>\([^:]*\):[^ ]* \([^ ]* [^ ]*\) .*/>\1 \2/' "$file" 
+    sed -i -E '/^>/ {s/ /_/g; s/([A-Za-z])([0-9])/\1_\2/g}' "$file"
+    if [ "$base" = "Mantodea_16S" ]; then
+    sed -i '/^>/ s/$/_\[gene=16S\]/' "$file"
+    else 
+    sed -i '/^>/ s/$/_\[gene=12S\]/' "$file"
+    fi
+done
+```

@@ -1,4 +1,4 @@
-COMANDI GENERICI
+ùCOMANDI GENERICI
 
 Caricare un file da computer al terminale
 
@@ -298,7 +298,7 @@ cp downloads_rRNAs/Mantodea_16S.fasta downloads_rRNAs/Mantodea_12S.fasta downloa
 for file in downloads_rRNAs_simplify/*.fasta; do
     base=$(basename "$file" .fasta)
     sed -i 's/^>\([^:]*\):[^ ]* \([^ ]* [^ ]*\) .*/>\1 \2/' "$file" 
-    sed -i -E '/^>/ {s/ /_/g; s/([A-Za-z])([0-9])/\1_\2/g}' "$file"
+    sed -i '/^>/ s/ /_/g' "$file"
     if [ "$base" = "Mantodea_16S" ]; then
     sed -i '/^>/ s/$/_\[gene=16S\]/' "$file"
     else 

@@ -319,4 +319,16 @@ for file in downloads_failed_simplify/*.fasta; do
     sed -i "s/^>/>${base}_/" "$file"
     sed -i '/^>/ s/ /_/g' "$file"
 done
+
+#14/11/2025
+#luchetti_data_3_species
+mkdir luchetti_data_simplify
+scp Desktop/data/Luchetti\ data/MITOS_annotated/*  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Downloads_Mantodea_simplify/luchetti_data_simplify/
+
+for file in luchetti_data_simplify/*.fasta; do
+    base=$(basename "$file" .fasta)
+    sed -i 's/^>.*; *\([^;]*\) */>[gene=\1]/' "$file"
+    sed -i "s/^>/>${base}_/" "$file"
+    sed -i '/^>/ s/ /_/g' "$file"
+done
 ```

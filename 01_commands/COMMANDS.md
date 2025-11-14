@@ -305,4 +305,18 @@ for file in downloads_rRNAs_simplify/*.fasta; do
     sed -i '/^>/ s/$/_\[gene=12S\]/' "$file"
     fi
 done
+
+
+#14/11/2025
+#downloads failed 
+
+mkdir downloads_failed_simplify
+scp Desktop/data/Unverified\ sequences\ MITOS\ annotated/* STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Downloads_Mantodea_simplify/downloads_failed_simplify 
+
+for file in downloads_failed_simplify/*.fasta; do
+    base=$(basename "$file" .fasta)
+    sed -i 's/^>.*; *\([^;]*\) */>[gene=\1]/' "$file"
+    sed -i "s/^>/>${base}_/" "$file"
+    sed -i '/^>/ s/ /_/g' "$file"
+done
 ```

@@ -18,4 +18,13 @@ awk -F'\t' 'NR > 1 {print $2}' Mantodea_dataset.tsv |  wc -l
 awk -F'\t' 'NR > 1 {print $2}' Mantodea_dataset.tsv | sort --unique | wc -l
 
 ```
-Nel dataset sono presenti 162 Acession Number univoci, di questi 153 sono di Specie univoche mentre 9 sono doppioni
+Nel dataset sono presenti 162 Acession Numbers univoci, di questi 153 sono di Specie univoche mentre 9 sono doppioni
+
+
+
+AGG. in data 14/11/2025
+
+Nel dataset sono presenti 162 Acession Numbers univoci, di questi 153 sono di Specie univoche mentre 9 sono doppioni.
+A questi si aggiungono altri 3 campioni (AA001,AA003,AA005) per un totale di 165 tips. 
+
+

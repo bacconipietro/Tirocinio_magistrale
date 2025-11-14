@@ -1,4 +1,4 @@
-ùCOMANDI GENERICI
+COMANDI GENERICI
 
 Caricare un file da computer al terminale
 
@@ -332,3 +332,64 @@ for file in luchetti_data_simplify/*.fasta; do
     sed -i '/^>/ s/ /_/g' "$file"
 done
 ```
+
+CREATING GENES FILES (GREPPING HEADERS+SEQUENCE) 14-11-2025
+
+```
+mkdir -p mt_genes_Mantodea
+for file in Downloads_Mantodea_simplify/*/*.fasta; do
+    awk '
+        /^>/ {
+            p = 0
+            low = tolower($0)
+
+            if (low ~ /gene=(cox1|coxi([^a-z]|$)|coi([^a-z]|$))/)       { out="mt_genes_Mantodea/COX1_genes.fasta"; p=1 }
+            else if (low ~ /gene=(cox2|coxii([^a-z]|$)|coii([^a-z]|$))/)       { out="mt_genes_Mantodea/COX2_genes.fasta"; p=1 }
+            else if (low ~ /gene=(cox3|coxiii|coiii)/)      { out="mt_genes_Mantodea/COX3_genes.fasta"; p=1 }
+            else if (low ~ /gene=(cob|cytb|cyt_b)/)        { out="mt_genes_Mantodea/CYTB_genes.fasta"; p=1 }
+            else if (low ~ /gene=(atp6)/)            { out="mt_genes_Mantodea/ATP6_genes.fasta"; p=1 }
+            else if (low ~ /gene=(atp8)/)            { out="mt_genes_Mantodea/ATP8_genes.fasta"; p=1 }
+            else if (low ~ /gene=(nd1|nad1)/)        { out="mt_genes_Mantodea/ND1_genes.fasta"; p=1 }
+            else if (low ~ /gene=(nd2|nad2)/)        { out="mt_genes_Mantodea/ND2_genes.fasta"; p=1 }
+            else if (low ~ /gene=(nd3|nad3)/)        { out="mt_genes_Mantodea/ND3_genes.fasta"; p=1 }
+            else if (low ~ /gene=(nd4([^a-z]|$)|nad4([^a-z]|$))/)             { out="mt_genes_Mantodea/ND4_genes.fasta"; p=1 }
+            else if (low ~ /gene=(nd4l|nad4l)/) { out="mt_genes_Mantodea/ND4L_genes.fasta"; p=1 }
+            else if (low ~ /gene=(nd5|nad5)/)        { out="mt_genes_Mantodea/ND5_genes.fasta"; p=1 }
+            else if (low ~ /gene=(nd6|nad6)/)        { out="mt_genes_Mantodea/ND6_genes.fasta"; p=1 }
+            else if (low ~ /(gene|locus_tag)=(rrn12|rrns|12s|.*_mgr01)/) { out="mt_genes_Mantodea/rrns_genes.fasta"; p=1 }
+            else if (low ~ /(gene|locus_tag)=(rrn16|rrnl|16s|.*_mgr02)/) { out="mt_genes_Mantodea/rrnl_genes.fasta"; p=1 }
+            else { out="mt_genes_Mantodea/UNMATCHED_genes.fasta"; p=1 }
+        }
+
+        p { print >> out }
+    ' "$file"
+done
+
+
+
+#COUNTING TIPS PER GENE
+for file in mt_genes_Mantodea/*.fasta; do
+
+count=$(grep "^>" "$file" | wc -l)
+echo "Tips number for $file is $count"
+
+done 
+```
+OUTPUT:
+Tips number for mt_genes_Mantodea/ATP6_genes.fasta is 165
+Tips number for mt_genes_Mantodea/ATP8_genes.fasta is 165
+Tips number for mt_genes_Mantodea/COX1_genes.fasta is 165
+Tips number for mt_genes_Mantodea/COX2_genes.fasta is 165
+Tips number for mt_genes_Mantodea/COX3_genes.fasta is 165
+Tips number for mt_genes_Mantodea/CYTB_genes.fasta is 165
+Tips number for mt_genes_Mantodea/ND1_genes.fasta is 165
+Tips number for mt_genes_Mantodea/ND2_genes.fasta is 160
+Tips number for mt_genes_Mantodea/ND3_genes.fasta is 165
+Tips number for mt_genes_Mantodea/ND4_genes.fasta is 165
+Tips number for mt_genes_Mantodea/ND4L_genes.fasta is 165
+Tips number for mt_genes_Mantodea/ND5_genes.fasta is 165
+Tips number for mt_genes_Mantodea/ND6_genes.fasta is 165
+Tips number for mt_genes_Mantodea/rrnl_genes.fasta is 156
+Tips number for mt_genes_Mantodea/rrns_genes.fasta is 156
+Tips number for mt_genes_Mantodea/UNMATCHED_genes.fasta is 1917
+

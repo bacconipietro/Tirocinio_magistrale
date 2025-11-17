@@ -117,7 +117,7 @@ Phyllothelys_breve_2
 Raptrix_fusca
 Leptomantella_sp.
 Creobroter_sp.
-Panurgica_fraterculata
+Panurgica_fratercula
 Ceratocrania_macra
 Otomantis_scutigera
 Tenodera_aridifolia_brevicollis

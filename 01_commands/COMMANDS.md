@@ -393,3 +393,73 @@ Tips number for mt_genes_Mantodea/rrnl_genes.fasta is 156
 Tips number for mt_genes_Mantodea/rrns_genes.fasta is 156
 Tips number for mt_genes_Mantodea/UNMATCHED_genes.fasta is 1917
 
+
+## FINDING MISSING SPECIES in grep process  17-11-2025 / 18-11-2025
+ 
+#ND2
+```
+mkdir missing_headers_ND2
+cp ND2_genes.fasta missing_headers_ND2/
+
+#SERVE PER CORREGGERE GLI HEADER ED ELIMINARE LE LCL DI TROPPO 
+sed -i -E 's/lcl[^.]*\.1_//' file.fasta
+
+grep "^>" ND2_genes.fasta > ND2_output.fasta  
+sed -i -E 's/^>.*_([A-Za-z]+_[A-Za-z]+).*/\1/' ND2_output.fasta
+sort -u ND2_output.fasta > species_in_ND2_fasta.txt 
+sort -u ../../Species_Mantodea.txt > species_list_sorted.txt
+diff species_in_ND2_fasta.txt species_list_sorted.txt > missing.txt
+```
+
+Output missing.txt per ND2:
+Tenodera_aridifolia_brevicollis 
+Decimiana_sp. //check su NCBI, ND2 PRESENTE su GenBank ma NON SCARICATA, BISOGNA AGGIUNGERLE A MANO
+Deroplatys_desiccata_2                
+Hierodula_sp._2q
+Humbertiella_nada_2
+Iris_polystictica //chack su NCBI, ND2 assente partial genomecd
+Mesopteryx_alata_2
+Phyllothelys_breve_2
+Polyspilota_griffinii //check su NCBI, ND2 assente partial genome
+Popa_spurca_spurca
+Pseudempusa_pinnapavonis_2
+Spilomantis_occipitalis_2
+Statilia_sp._2
+Arria_pallida_2
+Taumantis_sigiana // check su NCBI, ND2 PRESENTE su GenBank ma NON SCARICATA, BISOGNA AGGIUNGERLE A MANO
+Otomantis_sp. //chack su NCBI, ND2 assente partial genome
+
+
+#rrns
+``` 
+mkdir missing_headers_rrns
+cp rrns_genes.fasta missing_headers_rrns/
+
+sed -i -E 's/lcl[^.]*\.1_//' file.fasta 
+
+grep "^>" rrns_genes.fasta > rrns_output.fasta  
+sed -i -E 's/^>.*_([A-Za-z]+_[A-Za-z]+).*/\1/' rrns_output.fasta
+sort -u rrns_output.fasta > species_in_rrns_fasta.txt 
+sort -u ../../Species_Mantodea.txt > species_list_sorted.txt
+diff species_in_rrns_fasta.txt species_list_sorted.txt > missing.txt
+```
+utput:
+
+Carrikerella_sp.  //check su NCBI rrns PRESENTE, trovato errore nell'accession ORA CORRETTO 
+
+Gonypeta_sp.  //check su NCBI rrns PRESENTE, pattern di ricerca diverso, "s-rRNA" (l-rRNA per 16S)
+
+
+Popa_spurca_spurca //check c'é, il seconda spurca è venuto tagliato 
+
+Stenotoxodera_porioni //check su NCBI rrns PRESENTE, HEADER SBAGLIATO nei download, CORRETTI A MANO, RIFARE grep
+Theopropus_elegans  //check su NCBI rrns PRESENTE, HEADER SBAGLIATO nei download, CORRETTI A MANO, RIFARE grep
+
+
+Anaxarcha_zhengi       //check su NCBI rrns PRESENTE, pattern di ricerca diverso "gr01" (gr02 per 16S)
+Creobroter_gemmatus    //check su NCBI rrns PRESENTE, pattern di ricerca diverso "gr01" (gr02 per 16S)
+Hierodula_formosana    //check su NCBI rrns PRESENTE, pattern di ricerca diverso "gr01" (gr02 per 16S)
+Mantis_religiosa       //check su NCBI rrns PRESENTE, pattern di ricerca diverso "gr01" (gr02 per 16S)
+Tenodera_sinensis      //check su NCBI rrns PRESENTE, pattern di ricerca diverso "gr01" (gr02 per 16S)
+
+

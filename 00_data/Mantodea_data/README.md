@@ -1,4 +1,4 @@
-# Download NCBI dataset 18/11/2025
+# Download NCBI dataset 18-11-2025
 
 ```
 mkdir -p downloads downloads_PCGs downloads_failed downloads_txt
@@ -174,6 +174,70 @@ for file in luchetti_simplify/*.fasta; do
     sed -i '/^>/ s/ /_/g' "$file"
 done
 ```
+
+# Grep Headers 20-11-2025
+
+### Grepping mt genes
+```
+mkdir -p mt_genes_Mantodea
+for file in Download_simplifyheaders_MantodeaNCBIdataset/*/*.fasta; do
+    awk '
+        /^>/ {
+            p = 0
+            low = tolower($0)
+
+            if (low ~ /gene=(cox1|coxi([^a-z]|$)|coi([^a-z]|$))/)       { out="mt_genes_Mantodea/COX1.fasta"; p=1 }
+            else if (low ~ /gene=(cox2|coxii([^a-z]|$)|coii([^a-z]|$))/)       { out="mt_genes_Mantodea/COX2.fasta"; p=1 }
+            else if (low ~ /gene=(cox3|coxiii|coiii)/)      { out="mt_genes_Mantodea/COX3.fasta"; p=1 }
+            else if (low ~ /gene=(cob|cytb|cyt_b)/)        { out="mt_genes_Mantodea/CYTB.fasta"; p=1 }
+            else if (low ~ /gene=(atp6)/)            { out="mt_genes_Mantodea/ATP6.fasta"; p=1 }
+            else if (low ~ /gene=(atp8)/)            { out="mt_genes_Mantodea/ATP8.fasta"; p=1 }
+            else if (low ~ /gene=(nd1|nad1)/)        { out="mt_genes_Mantodea/ND1.fasta"; p=1 }
+            else if (low ~ /gene=(nd2|nad2)/)        { out="mt_genes_Mantodea/ND2.fasta"; p=1 }
+            else if (low ~ /gene=(nd3|nad3)/)        { out="mt_genes_Mantodea/ND3.fasta"; p=1 }
+            else if (low ~ /gene=(nd4([^a-z]|$)|nad4([^a-z]|$))/)             { out="mt_genes_Mantodea/ND4.fasta"; p=1 }
+            else if (low ~ /gene=(nd4l|nad4l)/) { out="mt_genes_Mantodea/ND4L.fasta"; p=1 }
+            else if (low ~ /gene=(nd5|nad5)/)        { out="mt_genes_Mantodea/ND5.fasta"; p=1 }
+            else if (low ~ /gene=(nd6|nad6)/)        { out="mt_genes_Mantodea/ND6.fasta"; p=1 }
+            else if (low ~ /(gene|locus_tag)=(rrn12|rrns|rrnS|s-rrna|.*_mgr01|.*_gr01)/) { out="mt_genes_Mantodea/rrns.fasta"; p=1 }
+            else if (low ~ /(gene|locus_tag)=(rrn16|rrnl|rrnL|l-rrna|.*_mgr02|.*_gr02)/) { out="mt_genes_Mantodea/rrnl.fasta"; p=1 }
+            else { out="mt_genes_Mantodea/UNMATCHED_genes.fasta"; p=1 }
+        }
+
+        p { print >> out }
+    ' "$file"
+done
+```
+
+### Counting tips per gene
+```
+for file in mt_genes_Mantodea/*.fasta; do
+
+    count=$(grep "^>" "$file" | wc -l)
+    echo "Tips number for $file is $count"
+done 
+```
+OUTPUT:
+Tips number for mt_genes_Mantodea/ATP6.fasta is 165
+Tips number for mt_genes_Mantodea/ATP8.fasta is 165
+Tips number for mt_genes_Mantodea/COX1.fasta is 165
+Tips number for mt_genes_Mantodea/COX2.fasta is 165
+Tips number for mt_genes_Mantodea/COX3.fasta is 165
+Tips number for mt_genes_Mantodea/CYTB.fasta is 165
+Tips number for mt_genes_Mantodea/ND1.fasta is 165
+Tips number for mt_genes_Mantodea/ND2.fasta is 162
+Tips number for mt_genes_Mantodea/ND3.fasta is 165
+Tips number for mt_genes_Mantodea/ND4.fasta is 165
+Tips number for mt_genes_Mantodea/ND4L.fasta is 165
+Tips number for mt_genes_Mantodea/ND5.fasta is 165
+Tips number for mt_genes_Mantodea/ND6.fasta is 165
+Tips number for mt_genes_Mantodea/rrnl.fasta is 165
+Tips number for mt_genes_Mantodea/rrns.fasta is 165
+Tips number for mt_genes_Mantodea/UNMATCHED_genes.fasta is 1899
+
+Until this date 19-11-2025 we have 162 tips from NCBIdataset and 3 Ameles tips, for a total of 165 tips. 
+We have 3 missing species in **ND2** fasta file. After review it's clear that *Iris_polystictica*,*Polyspilota_griffinii* and *Otomantis_sp.* have partial genome which there are no ND2 sequences. 
+
 
 
 

@@ -1,4 +1,4 @@
-### Download NCBI dataset 18/11/2025
+# Download NCBI dataset 18/11/2025
 
 ```
 mkdir -p downloads downloads_PCGs downloads_failed downloads_txt
@@ -33,24 +33,20 @@ do
     fi
 done
 ```
-### Simplify headers 19-11-2025
+# Simplify headers 19-11-2025
 
-
-# Upload di Mantodea_rrnl.fasta Mantodea_rrns.fasta
+### Upload di Mantodea_rrnl.fasta Mantodea_rrns.fasta
 ```
 mkdir Download_MantodeaNCBIdataset/downloads_rRNAs
 scp Desktop/data/rRNAs_downloads/*.fasta  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_MantodeaNCBIdataset/downloads_rRNAs/
 ```
 
-# Upload di AA001_Ameand.fasta AA003_Ameser.fasta AA005_Amespa.fasta
+### Upload di AA001_Ameand.fasta AA003_Ameser.fasta AA005_Amespa.fasta
 ```
 scp Desktop/data/Luchetti\ data/MITOS_annotated/*.fasta  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Luchetti_data
 ```
 
-
-## Simplify downloads + downloads PCGs headers
-
-# downloads
+### downloads
 
 ```
 mkdir Download_simplifyheaders_MantodeaNCBIdataset/downloads_simplify 
@@ -71,7 +67,7 @@ for file in downloads_simplify/*.gene_fasta; do
 done
 ```
 
-# downloads PCGs
+### downloads PCGs
 
 ```
 mkdir Download_simplifyheaders_MantodeaNCBIdataset/downloads_simplify_PCGs
@@ -91,9 +87,9 @@ for file in downloads_simplify_PCGs/*.gene_fasta; do
 done
 ```
 
-## Simplify rrns/rrnl headers
+### rrns/rrnl
 
-# Keeping only the name and the accession
+Keeping only the name and the accession
 
 ```
 mkdir working_directory
@@ -105,7 +101,7 @@ sed -i '/^>/ s/ /_/g' "$file"
 done 
 ```
 
-# Species names Substitution with code (rrns/rrnl)
+Species names Substitution with code (rrns/rrnl)
 
 ```
 ln -s /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_MantodeaNCBIdataset/downloads_txt/downloads_only_PCGs.txt
@@ -130,9 +126,9 @@ awk '
     { print }
 ' downloads_only_PCGs.txt Mantodea_rrns.fasta > Mantodea_rrns_renamed.fasta
 ```
-One error: Rapttrix_fusca OM910847.1 X -> Carrikerella sp. OM910846.1 //Manual final correction 
+One error: Rapttrix_fusca OM910847.1 X -> Carrikerella sp. OM910846.1 //Manual final correction headers+sequences
 
-# Final correction adding gene string [gene=rrns]/[gene=rrnl]
+Final correction adding gene string [gene=rrns]/[gene=rrnl]
 
 ```
 for file in downloads_simplify_rRNAs/Mantodea_rrnl_renamed.fasta; do
@@ -150,7 +146,7 @@ mv Mantodea_rrnl_renamed.fasta Mantodea_rrnl_final.fasta
 ```
 
 
-## Simplify failed downloads headers
+### failed downloads 
 ```
 mkdir Download_MantodeaNCBIdataset/downloads_failed
 scp Desktop/data/Failed_downloads/Unverified\ sequences\ MITOS\ annotated/*.fasta  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_MantodeaNCBIdataset/downloads_failed
@@ -166,7 +162,7 @@ for file in downloads_simplify_failed/*.fasta; do
 done
 ```
 
-## Simplify luchetti data headers
+### luchetti data
 ```
 mkdir Download_simplifyheaders_MantodeaNCBIdataset/luchetti_simplify
 scp Desktop/data/Luchetti\ data/MITOS_annotated/*.fasta  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_simplifyheaders_MantodeaNCBIdataset/luchetti_simplify
@@ -178,6 +174,7 @@ for file in luchetti_simplify/*.fasta; do
     sed -i '/^>/ s/ /_/g' "$file"
 done
 ```
+
 
 
 

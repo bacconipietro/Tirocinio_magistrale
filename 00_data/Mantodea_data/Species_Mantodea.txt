@@ -160,3 +160,6 @@ Hierodula_patellifera
 Sphodromantis_lineola
 Statilia_maculata
 Leptomantella_tonkinae
+Ameles_andreae
+Ameles_serpentiscauda
+Ameles_spallanzania

@@ -1,4 +1,4 @@
-COMANDI GENERICI
+# COMANDI GENERICI
 
 Caricare un file da computer al terminale
 
@@ -462,4 +462,40 @@ Hierodula_formosana    //check su NCBI rrns PRESENTE, pattern di ricerca diverso
 Mantis_religiosa       //check su NCBI rrns PRESENTE, pattern di ricerca diverso "gr01" (gr02 per 16S)
 Tenodera_sinensis      //check su NCBI rrns PRESENTE, pattern di ricerca diverso "gr01" (gr02 per 16S)
 
+
+## FINDING MISSING SPECIES in grep process 2°run 20-11-2025
+
+File .txt with code names
+```
+(~/Tirocinio_magistrale/00_data/Mantodea_data) -> cut -f2 Mantodea_NCBIdataset.tsv > Code_MantodeaNCBIdataset.txt
+(/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/mt_genes_Mantodea) -> ln -s /home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/00_data/Mantodea_data/Code_MantodeaNCBIdataset.txt
+```
+
+Manual: Delete header and had Ameand Ameser Amespa
+```
+nano Code_MantodeaNCBIdataset.txt
+```
+
+Finding missing species
+```
+grep "^>" rrns.fasta > rrns_output.fasta  
+sed -E -i 's/^>NC[^_]*_[^_]*_([^_]*).*/>\1/; s/^>[^_]*_([^_]*).*/>\1/' rrns_output.fasta
+sort rrns_output.fasta > species_in_rrns_fasta.txt 
+sort Code_MantodeaNCBIdataset.txt > species_list_sorted.txt
+diff species_in_rrns_fasta.txt species_list_sorted.txt > missing.txt
+
+grep "A" missing.txt | less
+grep "B" missing.txt | less
+grep "C" missing.txt | less
+...
+```
+
+### Errors:
+
+- Gonypeta_sp.: (downloads_simplify) grep didn't work 
+- Hierodula_sp.: (downloads_simplify) grep didn't work 
+- Staspe2: (downloads_simplify) grep didn't work -> pattern s-rRNA -> if condition corretta in s-rrna
+- Leptomantella albella è venuto doppio???? Find error: don't know why Tamtam became Lepalb during the simplify process CORRECT VERSION -> NC_007702.1_Tamtam_[gene=rrnl]
+
+Run once again the loop with pattern correction, right result
 

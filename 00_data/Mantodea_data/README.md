@@ -126,7 +126,7 @@ awk '
     { print }
 ' downloads_only_PCGs.txt Mantodea_rrns.fasta > Mantodea_rrns_renamed.fasta
 ```
-One error: Rapttrix_fusca OM910847.1 X -> Carrikerella sp. OM910846.1 //Manual final correction headers+sequences
+One error: *Rapttrix_fusca* OM910847.1 X -> *Carrikerella sp.* OM910846.1 //Manual final correction headers+sequences
 
 Final correction adding gene string [gene=rrns]/[gene=rrnl]
 

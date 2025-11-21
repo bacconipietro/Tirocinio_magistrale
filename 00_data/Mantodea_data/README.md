@@ -126,9 +126,10 @@ awk '
     { print }
 ' downloads_only_PCGs.txt Mantodea_rrns.fasta > Mantodea_rrns_renamed.fasta
 ```
-One error: *Rapttrix_fusca* OM910847.1 X -> *Carrikerella sp.* OM910846.1 //Manual final correction headers+sequences
-
+1st error: *Rapttrix_fusca* OM910847.1 (wrong)  Manual final correction headers+sequences *Carrikerella sp.* OM910846.1
+2nd error: *Tamolanica_tamolana* (Tamtam header) became *Leptomantella_albella* (Lepalb). Manual correction, pay attention everytime the command is run.   
 Final correction adding gene string [gene=rrns]/[gene=rrnl]
+
 
 ```
 for file in downloads_simplify_rRNAs/Mantodea_rrnl_renamed.fasta; do

@@ -499,3 +499,213 @@ grep "C" missing.txt | less
 
 Run once again the loop with pattern correction, right result
 
+# Modify headers and align mitogenes with MAFFT  27-11-2025
+
+### Modify headers, need to delete [..] because are not allowed in iqtree run.
+```
+for file in mt_genes_Mantodea/*.fasta; do
+sed -i.old 's/_\[[^][]*\].*//g' "$file" 
+done
+```
+
+
+### Align all fasta files with MAFFT, genafpair method
+```
+for file in mt_genes_Mantodea/*.fasta; do
+base=(basename "$file" .fasta)
+mafft --maxiterate 1000 --genafpair "$file" >  "Alignments_Mantodea/${base}_alignment.fasta" 
+done
+```
+
+
+# Install iqtree 3.0.0 27-11-2025
+```
+conda create --name iqtree
+conda activate iqtree
+conda install -c bioconda iqtree
+iqtree3 -s COX1_align.fasta -m MFP -T AUTO -pre COX1_ML -B 1000     #-m Model selection -T threads -pre Prefix#  
+```
+
+
+### Practice with COX1 tree
+#### Outgroups
+
+NC_012901.1_Blattella_germanica                             NC_012901.1_Blager
+NC_030191.1_Cryptocercus_kyebangensis                       NC_030191.1_Crykye 
+NC_018125.1_Coptotermes_lacteus                             NC_018125.1_Coplac
+NC_018120.1_Mastotermes_darwiniensis                        NC_018120.1_Masdar
+
+
+copy and paste cox1_outgroups into a new COX1.fasta file
+```
+nano COX1.fasta
+mv COX1.fasta COX1_4outgroups.fasta 
+```
+mafft to align all them together
+```
+mafft --maxiterate 1000 --genafpair COX1_4outgroups.fasta > COX1_4outgroups_alignment.fasta
+```
+
+Run iqtree3
+```
+conda activate iqtree
+iqtree3 -s COX1_4outgroups_alignment.fasta -m MFP -T AUTO -pre COX1_ML -B 1000
+```
+
+OUTPUT: COX1_ML.contree upload on iTOL
+
+
+
+
+
+# New Alignment method 2/12/2025
+
+add COX2, 
+```
+mkdir COX1 COX2 #in iqtree
+```
+Trying different alignment method: 
+
+### COX1
+```
+scree -r window
+cd /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/iqtree/COX1 
+
+mafft --maxiterate 1000 --preservecase --localpair COX1_4outgroups.fasta > COX1_4outgroups_localpair.fasta
+
+mafft --maxiterate 1000 --preservecase --globalpair COX1_4outgroups.fasta > COX1_4outgroups_globalpair.fasta
+```
+
+### COX2
+```
+scree -r window2
+cd /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/iqtree/COX2 
+mafft --maxiterate 1000 --preservecase --localpair COX2_4outgroups.fasta > COX2_4outgroups_localpair.fasta
+
+mafft --maxiterate 1000 --preservecase --globalpair COX2_4outgroups.fasta > COX2_4outgroups_globalpair.fasta
+
+mafft --maxiterate 1000 --preservecase --genafpair COX2_4outgroups.fasta > COX2_4outgroups_genafpair.fasta
+```
+
+## Run iqtree with partition
+```
+screen -S window3
+nano COX1_genafpair_partition.txt
+```
+ 
+
+(): begin sets;
+DNA, COX1_b1=1-525
+DNA, COX1_b2=526-1050
+DNA, COX1_b3=1051-1574
+end;
+
+```
+iqtree3 -s COX1_4outgroups_genafpair.fasta -p COX1_genafpair_partition.txt -m MFP -T AUTO -pre COX1_ML_genafpair_partitioned -B 1000
+
+iqtree3 -s COX1_4outgroups_localpair.fasta -p COX1_localpair_partition.txt -m MFP -T AUTO -pre COX1_ML_localpair_partitioned -B 1000
+
+iqtree3 -s COX1_4outgroups_globalpair.fasta -p COX1_globalpair_partition.txt -m MFP -T AUTO -pre COX1_ML_globalpair_partitioned -B 1000
+```
+
+### COX2 
+```
+nano COX1_genafpair_partition.txt  //same for global and local
+
+iqtree3 -s COX2_4outgroups_genafpair.fasta -p COX2_genafpair_partition.txt -m MFP -T AUTO -pre COX2_ML_genafpair_partitioned -B 1000
+
+iqtree3 -s COX2_4outgroups_localpair.fasta -p COX2_localpair_partition.txt -m MFP -T AUTO -pre COX2_ML_localpair_partitioned -B 1000
+
+iqtree3 -s COX2_4outgroups_globalpair.fasta -p COX2_globalpair_partition.txt -m MFP -T AUTO -pre COX2_ML_globalpair_partitioned -B 1000
+```
+
+
+# Alan
+```
+./alan.sh file_fasta_aligned.fasta
+```
+
+# Learning Amas 3-12-2025
+```
+conda install bioconda::amas
+conda update amas
+~/miniforge3/bin AMAS.py
+```
+
+### ND4 alignment
+```
+mafft --maxiterate 1000 --preservecase --localpair ND4_4outgroups.fasta > ND4_4outgroups_localpair.fasta
+
+mafft --maxiterate 1000 --preservecase --globalpair ND4_4outgroups.fasta > ND4_4outgroups_globalpair.fasta
+
+mafft --maxiterate 1000 --preservecase --genafpair ND4_4outgroups.fasta > ND4_4outgroups_genafpair.fasta
+```
+
+## Concat 3 genes with Amas
+```
+/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/working_iqtree/concat
+```
+COX1_4outgroups_genafpair.fasta
+COX2_4outgroups_genafpair.fasta
+ND4_4outgroups_genafpair.fasta
+
+```
+AMAS.py concat -p COX1_COX2_ND4.txt -t COX1_COX2_ND4_concat.fasta -u fasta -y nexus -i *.fasta -f fasta -d dna  
+```
+
+if you run the same code with "-n 123" it will split automatically the partitions in codons in nexu file
+
+
+COX1_COX2_ND4.txt:
+#NEXUS
+
+Begin sets;
+        charset p1_COX1_4outgroups_genafpair = 1-1574;
+        charset p2_COX2_4outgroups_genafpair = 1575-2276;
+        charset p3_ND4_4outgroups_genafpair = 2277-3641;
+End;
+
+// modify with 3 base info
+nano COX1_COX2_ND4.txt 
+
+#NEXUS
+
+Begin sets;
+        charset p1_COX1_b1 = 1-1574\3;
+        charset p1_COX1_b2 = 2-1574\3;
+        charset p1_COX1_b3 = 3-1574\3;
+        charset p2_COX2_b1 = 1575-2276\3;
+        charset p2_COX2_b2 = 1576-2276\3;
+        charset p2_COX2_b3 = 1577-2276\3;
+        charset p3_ND4_b1 = 2277-3641\3;
+        charset p3_ND4_b2 = 2278-3641\3;
+        charset p3_ND4_b3 = 2279-3641\3;
+End;
+
+
+### iqtree run
+```
+iqtree3 -s COX1_COX2_ND4_concat.fasta -p COX1_COX2_ND4.txt -m MFP -T AUTO -pre 3genes_ML_genafpair -B 1000 --sampling GENE
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

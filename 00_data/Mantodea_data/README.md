@@ -218,28 +218,68 @@ for file in mt_genes_Mantodea/*.fasta; do
     echo "Tips number for $file is $count"
 done 
 ```
-OUTPUT:
-Tips number for mt_genes_Mantodea/ATP6.fasta is 165
-Tips number for mt_genes_Mantodea/ATP8.fasta is 165
-Tips number for mt_genes_Mantodea/COX1.fasta is 165
-Tips number for mt_genes_Mantodea/COX2.fasta is 165
-Tips number for mt_genes_Mantodea/COX3.fasta is 165
-Tips number for mt_genes_Mantodea/CYTB.fasta is 165
-Tips number for mt_genes_Mantodea/ND1.fasta is 165
-Tips number for mt_genes_Mantodea/ND2.fasta is 162
-Tips number for mt_genes_Mantodea/ND3.fasta is 165
-Tips number for mt_genes_Mantodea/ND4.fasta is 165
-Tips number for mt_genes_Mantodea/ND4L.fasta is 165
-Tips number for mt_genes_Mantodea/ND5.fasta is 165
-Tips number for mt_genes_Mantodea/ND6.fasta is 165
-Tips number for mt_genes_Mantodea/rrnl.fasta is 165
-Tips number for mt_genes_Mantodea/rrns.fasta is 165
-Tips number for mt_genes_Mantodea/UNMATCHED_genes.fasta is 1899
 
 Until this date 19-11-2025 we have 162 tips from NCBIdataset and 3 Ameles tips, for a total of 165 tips. 
 We have 3 missing species in **ND2** fasta file. After review it's clear that *Iris_polystictica*,*Polyspilota_griffinii* and *Otomantis_sp.* have partial genome which there are no ND2 sequences. 
 
 
+# Dataset Folders Net 11-12-2025 
 
+### Count Families and Subfamilies
+```
+cut -f 9 Mantodea_NCBIdataset.tsv | sort| uniq | wc -l
+cut -f 10 Mantodea_NCBIdataset.tsv | sort | uniq | wc -l
+```
 
+In ouput we have **13 Families**, **36 Subfamilies** 
 
+### Counting Genera
+```
+sed -E 's/_.+$//g' Species_Mantodea.txt > gen.txt 
+cat gen.txt | sort | uniq | wc -l      #(94)
+mv gen.txt Genera.txt
+```
+
+In output we have **94 unique Genera**
+
+## Spltting fasta files into folders
+At first we need to copy all the 165 fasta genome files in a single folder which it's called Mantodea_foldersnet. We need to resolve the issue with fasta without rrnl and rrns genes:
+```
+mv Mantodea_rrnl_final.fasta Mantodea_rrnl_final.fa
+mv Mantodea_rrns_final.fasta Mantodea_rrns_final.fa
+
+for file in *.fasta; do
+   for rrn_file in *.fa; do
+     base=$(basename "$file" .fasta)
+     awk -v HEADER=">$base" '
+        $0 ~ ("^" HEADER) { p=1; print; next } 
+        /^>/{ p=0 } 
+        p
+     ' "$rrn_file" >> "$file"
+   done
+done
+```
+After solving rRNAs issue we start with create the **Folders Network**
+
+```
+cut -f 9,10 Mantodea_NCBIdataset.tsv | tail -n +2 - | while IFS=$'\t' read family subfamily; do
+  mkdir -p "$family"/"$subfamily"
+done
+```
+Then we **split** all the fasta in their right folders family/subfamily
+```
+ cut -f 2,9,10 Mantodea_NCBIdataset.tsv | tail -n +2 - | while IFS=$'\t' read code family subfamily; do  
+  for file in *.fasta; do
+      base=$(basename "$file" .fasta)
+      if [[ "$base" == NC_* ]]; then
+        name=${base#*_*_}
+        elif [[ "$base" != NC_* ]]; then
+        name=${base#*_}
+      fi
+        
+      if [[ "$code" == "$name" ]]; then 
+      mv "$file" "$family"/"$subfamily"/   
+      fi  
+  done
+done
+```

@@ -1,30 +1,28 @@
-#Notes sul dataset
+# Dataset notes
 
-Numero di righe iniziale 163, header compreso 
-(wh = wuthout header)
+Starting row numbers 163, with header 
+(wh = without header)
 
 ```
-#Numero specie no ordine wh == 162]
+#Species number without sorting wh == 162
 awk -F'\t' 'NR > 1 {print $1}' Mantodea_dataset.tsv | wc -l
 
-#Numero specie ordine unvico wh == 153. Ci sono 9 doppioni]
+#Unique species number sorted wh == 153. There are 9 double species
 
 awk -F'\t' 'NR > 1 {print $1}' Mantodea_dataset.tsv | sort --unique | wc -l
 
-#Numero AN no ordine wh == 162]
+#Accessions number without sorting wh == 162]
 awk -F'\t' 'NR > 1 {print $2}' Mantodea_dataset.tsv |  wc -l
 
-#Numero AN ordine univoco wh == 162]
+#Unique accessions number without sorting wh == 162]
 awk -F'\t' 'NR > 1 {print $2}' Mantodea_dataset.tsv | sort --unique | wc -l
 
 ```
-Nel dataset sono presenti 162 Acession Numbers univoci, di questi 153 sono di Specie univoche mentre 9 sono doppioni
+In this dataset there are 162 unique AN, 153 of these are unique species meanwhile 9 are double.
 
 
 
-AGG. in data 14/11/2025
-
-Nel dataset sono presenti 162 Acession Numbers univoci, di questi 153 sono di Specie univoche mentre 9 sono doppioni.
-A questi si aggiungono altri 3 campioni (AA001,AA003,AA005) per un totale di 165 tips. 
+AGG. 14/11/2025
+We add three new species (AA001,AA003,AA005), reaching 165 total dataset examples.  
 
 

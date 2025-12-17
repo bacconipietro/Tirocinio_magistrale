@@ -9,4 +9,7 @@ screen -r <name screen> //open old screen
 
 - Ctrl+A+D  //close screen 
 
-
+# zip
+```
+zip -r folder_name.zip <folder>
+```

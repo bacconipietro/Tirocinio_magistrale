@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PIPELINE="/BIGDATA1/r_projects/mattia.baricordi2/lcWGS/lcWGS_mt_sweep.py"
+PIPELINE="/home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/99_scripts/lcWGS/lcWGS_mt_sweep.py"
 
 R1=""; R2=""; SAMPLE=""; ROOT=""
 THREADS=16

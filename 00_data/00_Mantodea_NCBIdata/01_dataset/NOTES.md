@@ -24,7 +24,8 @@ In this dataset there are 162 unique AN, 153 of these are unique species meanwhi
 We add Paratoxodera gigliotosi MG888457.1, reaching **163** total NCBI samples 
 
 # 17-02-2026
-We add 7 new species, reaching **170** total NCBI samples
+We add 7 new species, reaching **170** total NCBI samples:
+
 + Ambivia_parapopa	            MG888436.1
 + Amorphoscelis_sp.	            MG888437.1
 + Hymenopus_coronatoides	      MG888449.1

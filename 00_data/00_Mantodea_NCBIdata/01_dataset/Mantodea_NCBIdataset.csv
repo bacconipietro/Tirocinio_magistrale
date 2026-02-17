@@ -162,3 +162,11 @@ Sphodromantis_lineola,Sphlin,NC_037204.1,EF383480.1,EF383642.1,GU064762.1,FJ8029
 Statilia_maculata,Stamac,NC_065760.1,FJ806513.1,FJ806717.1,EF384084.1,na,na,Mantidae,Mantinae,x
 Leptomantella_tonkinae,Lepton,OK480879.1,na,na,na,na,na,Leptomantellidae,na,x
 Paratoxodera_gigliotosi,Pargig,MG888457.1,na,na,na,na,na,Toxoderidae,Toxoderinae,x
+Species,Code,AN,18s,28s,H3,wnt-1,H2A,Family,Subfamily,Complete_genome
+Ambivia_parapopa,Ambpar,MG888436.1,na,na,na,na,na,Hymenopodidae,Acromantinae,x
+Amorphoscelis_sp.,Amospe,MG888437.1,na,na,na,na,na,Hymenopodidae,Acromantinae,x
+Hymenopus_coronatoides,Hymcor,MG888449.1,na,na,na,na,na,Hymenopodidae,Hymenopodinae,x
+Leptomantella_lactea,Leplac,MG888453.1,na,na,na,na,na,Leptomantellidae,,x
+Metallyticus_splendidus Metspl,MG888455.1,na,na,na,na,na,Metallyticidae,,x
+Parablepharis_kuhlii_asiatica Parkuhasi,MG888456.1,na,na,na,na,na,Hymenopodidae,Phyllothelyinae,x
+Sinomiopteryx_guangxiensis,MG888464.1,na,na,na,na,na,Thespidae,Pseudomiopteriginae,x

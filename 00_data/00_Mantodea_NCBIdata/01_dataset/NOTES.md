@@ -21,7 +21,7 @@ awk -F'\t' 'NR > 1 {print $2}' Mantodea_dataset.tsv | sort --unique | wc -l
 In this dataset there are 162 unique AN, 153 of these are unique species meanwhile 9 are double.
 
 
-# 14/11/2025
+# 14-11-2025
 We add three new species (AA001,AA003,AA005), reaching 165 total dataset examples.  
 
 # 09-02-2026

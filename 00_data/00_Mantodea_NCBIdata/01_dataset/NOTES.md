@@ -25,10 +25,10 @@ We add Paratoxodera gigliotosi MG888457.1, reaching **163** total NCBI samples
 
 # 17-02-2026
 We add 7 new species, reaching **170** total NCBI samples
-Ambivia_parapopa	            MG888436.1
-Amorphoscelis_sp.	            MG888437.1
-Hymenopus_coronatoides	      MG888449.1
-Leptomantella_lactea	        MG888453.1
-Metallyticus_splendidus	      MG888455.1
-Parablepharis_kuhlii_asiatica	MG888456.1
-Sinomiopteryx_guangxiensis	  MG888464.1
++ Ambivia_parapopa	            MG888436.1
++ Amorphoscelis_sp.	            MG888437.1
++ Hymenopus_coronatoides	      MG888449.1
++ Leptomantella_lactea	        MG888453.1
++ Metallyticus_splendidus	      MG888455.1
++ Parablepharis_kuhlii_asiatica	MG888456.1
++ Sinomiopteryx_guangxiensis	  MG888464.1

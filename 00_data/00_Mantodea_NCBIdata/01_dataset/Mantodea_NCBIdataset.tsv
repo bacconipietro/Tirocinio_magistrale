@@ -59,8 +59,8 @@ Tarachomantis_alaotrana	Tarala	KX434862.1	na	na	na	na	na	Mantidae	Tenoderinae	x
 Sphodromantis_viridis	Sphvir	KX434840.1	FJ806340.1	AY491223.1	GU064761.1	FJ802933.1	na	Mantidae	Tenoderinae	x
 Polyspilota_griffinii	Polgri	KX434863.1	na	na	na	na	na	Mantidae	Tenoderinae	x
 Plistospilota_sp.	Plispe	KX434821.1	AY491191.1	AY491250.1	AY491364.1	na	na	Mantidae	Tenoderinae	x
-Prohierodula_picta	Propic	KX434855.1	na				na	Mantidae	Tenoderinae	x
-Prohierodula_sp.	Prospe	KX434868.1	na				na	Mantidae	Tenoderinae	x
+Prohierodula_picta	Propic	KX434855.1	na  na  na  na  na  Mantidae	Tenoderinae	x
+Prohierodula_sp.	Prospe	KX434868.1	na  na  na  na  na	Mantidae	Tenoderinae	x
 Camelomantis_moultoni	Cammou	KX434812.1	FJ806388.1	FJ806587.1	FJ806751.1	FJ803027.1	na	Mantidae	Hierodulinae	PARTIAL
 Hierodula_majuscula	Hiemaj	KX434819.1	na	na	na	na	na	Mantidae	Hierodulinae	x
 Rhombodera_sp.	Rhospe	KX619654.1	na	na	GU066920.1	na	na	Mantidae	Hierodulinae	x
@@ -169,4 +169,5 @@ Leptomantella_lactea	Leplac	MG888453.1	na	na	na	na	na	Leptomantellidae		x
 Metallyticus_splendidus Metspl	MG888455.1	na	na	na	na	na	Metallyticidae		x
 Parablepharis_kuhlii_asiatica Parkuhasi	MG888456.1	na	na	na	na	na	Hymenopodidae	Phyllothelyinae	x
 Sinomiopteryx_guangxiensis	MG888464.1	na	na	na	na	na	Thespidae	Pseudomiopteriginae	x
+
 

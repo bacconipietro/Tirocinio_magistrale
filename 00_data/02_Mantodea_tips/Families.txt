@@ -9,5 +9,6 @@ Leptomantellidae
 Mantidae
 Metallyticidae
 Nanomantidae
+Rivetinidae
 Thespidae
 Toxoderidae

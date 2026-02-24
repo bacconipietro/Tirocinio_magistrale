@@ -1,9 +1,11 @@
 Acontista
 Acromantis
 Amantis
+Ambivia
 Ameles
 Amorphoscelis
 Anaxarcha
+Apteromantis
 Arria
 Asiadodis
 Astyliasula
@@ -70,8 +72,10 @@ Pseudempusa
 Pseudocreobotra
 Pseudogalepsus
 Pseudovates
+Pseudoyersinia
 Psychomantis
 Raptrix
+Rivetina
 Rhombodera
 Sceptuchus
 Schizocephala

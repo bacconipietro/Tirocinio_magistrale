@@ -160,3 +160,11 @@ Hierodula_patellifera
 Sphodromantis_lineola
 Statilia_maculata
 Leptomantella_tonkinae
+Paratoxodera_gigliotosi
+Ambivia_parapopa
+Amorphoscelis_sp.
+Hymenopus_coronatoides
+Leptomantella_lactea
+Metallyticus_splendidus
+Parablepharis_kuhlii_asiatica
+Sinomiopteryx_guangxiensis

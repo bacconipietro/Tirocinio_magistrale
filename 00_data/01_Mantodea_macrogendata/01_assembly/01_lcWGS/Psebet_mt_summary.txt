@@ -1,0 +1,284 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+NODE_1         19102          no             Not found           
+NODE_3         18415          no             Not found           
+NODE_5         16153          no             Not found           
+NODE_6         15618          no             Statilia            
+NODE_9         13411          no             Not found           
+NODE_12        11585          no             Not found           
+NODE_13        11314          no             Not found           
+NODE_14        10722          no             Not found           
+NODE_25        8847           no             Not found           
+NODE_31        8196           no             Not found           
+NODE_32        8129           no             Not found           
+NODE_44        7598           no             Not found           
+NODE_50        7265           no             Not found           
+NODE_52        7101           no             Not found           
+NODE_53        7094           no             Not found           
+NODE_54        7081           no             Not found           
+NODE_60        6973           no             Not found           
+NODE_71        6686           no             Not found           
+NODE_72        6662           no             Not found           
+NODE_86        6265           no             Not found           
+NODE_90        6208           no             Not found           
+NODE_96        6137           no             Not found           
+NODE_97        6110           no             Not found           
+NODE_112       5863           no             Not found           
+NODE_126       5706           no             Not found           
+NODE_146       5486           no             Not found           
+NODE_150       5441           no             Not found           
+NODE_162       5321           no             Not found           
+NODE_164       5316           no             Not found           
+NODE_165       5301           no             Not found           
+NODE_171       5252           no             Not found           
+NODE_177       5196           no             Not found           
+NODE_178       5159           no             Not found           
+NODE_182       5151           no             Not found           
+NODE_210       4769           no             Not found           
+NODE_211       4766           no             Not found           
+NODE_217       4687           no             Not found           
+NODE_218       4672           no             Not found           
+NODE_220       4659           no             Not found           
+NODE_226       4597           no             Not found           
+NODE_229       4581           no             Not found           
+NODE_233       4541           no             Not found           
+NODE_235       4527           no             Not found           
+NODE_241       4471           no             Not found           
+NODE_272       4219           no             Not found           
+NODE_284       4086           no             Not found           
+NODE_296       3989           no             Not found           
+NODE_307       3931           no             Not found           
+NODE_308       3924           no             Not found           
+NODE_317       3860           no             Not found           
+NODE_318       3859           no             Not found           
+NODE_327       3786           no             Not found           
+NODE_351       3636           no             Not found           
+NODE_355       3615           no             Not found           
+NODE_357       3600           no             Not found           
+NODE_361       3568           no             Not found           
+NODE_365       3546           no             Not found           
+NODE_387       3404           no             Not found           
+NODE_389       3397           no             Not found           
+NODE_394       3358           no             Not found           
+NODE_395       3346           no             Not found           
+NODE_401       3327           no             Not found           
+NODE_404       3309           no             Not found           
+NODE_407       3304           no             Not found           
+NODE_408       3303           no             Not found           
+NODE_412       3286           no             Not found           
+NODE_416       3264           no             Not found           
+NODE_431       3211           no             Not found           
+NODE_435       3190           no             Not found           
+NODE_438       3173           no             Not found           
+NODE_441       3159           no             Not found           
+NODE_456       3091           no             Not found           
+NODE_471       3037           no             Not found           
+NODE_489       2948           no             Not found           
+NODE_492       2932           no             Not found           
+NODE_505       2903           no             Not found           
+NODE_506       2903           no             Not found           
+NODE_510       2874           no             Not found           
+NODE_521       2844           no             Not found           
+NODE_526       2822           no             Not found           
+NODE_532       2796           no             Not found           
+NODE_535       2783           no             Not found           
+NODE_544       2746           no             Not found           
+NODE_547       2734           no             Not found           
+NODE_553       2716           no             Not found           
+NODE_558       2697           no             Not found           
+NODE_563       2688           no             Not found           
+NODE_564       2688           no             Not found           
+NODE_576       2667           no             Not found           
+NODE_578       2664           no             Not found           
+NODE_579       2658           no             Not found           
+NODE_586       2637           no             Not found           
+NODE_588       2633           no             Not found           
+NODE_607       2561           no             Not found           
+NODE_618       2539           no             Not found           
+NODE_622       2513           no             Not found           
+NODE_634       2476           no             Not found           
+NODE_653       2408           no             Not found           
+NODE_655       2400           no             Not found           
+NODE_661       2384           no             Not found           
+NODE_662       2384           no             Not found           
+NODE_671       2359           no             Not found           
+NODE_682       2333           no             Not found           
+NODE_694       2312           no             Not found           
+NODE_701       2291           no             Not found           
+NODE_717       2277           no             Not found           
+NODE_722       2269           no             Not found           
+NODE_737       2253           no             Not found           
+NODE_740       2244           no             Not found           
+NODE_751       2221           no             Not found           
+NODE_756       2211           no             Not found           
+NODE_766       2184           no             Not found           
+NODE_769       2176           no             Not found           
+NODE_780       2159           no             Not found           
+NODE_782       2154           no             Not found           
+NODE_804       2113           no             Not found           
+NODE_806       2106           no             Not found           
+NODE_819       2085           no             Not found           
+NODE_821       2083           no             Not found           
+NODE_833       2073           no             Not found           
+NODE_847       2043           no             Not found           
+NODE_848       2040           no             Not found           
+NODE_855       2024           no             Not found           
+NODE_871       2005           no             Not found           
+NODE_875       1999           no             Not found           
+NODE_876       1995           no             Not found           
+NODE_893       1970           no             Not found           
+NODE_896       1968           no             Not found           
+NODE_900       1963           no             Not found           
+NODE_902       1961           no             Not found           
+NODE_912       1950           no             Not found           
+NODE_914       1935           no             Not found           
+NODE_925       1921           no             Not found           
+NODE_926       1919           no             Not found           
+NODE_934       1905           no             Not found           
+NODE_937       1901           no             Not found           
+NODE_985       1841           no             Not found           
+NODE_987       1839           no             Not found           
+NODE_993       1825           no             Not found           
+NODE_1003      1817           no             Not found           
+NODE_1006      1813           no             Not found           
+NODE_1010      1806           no             Not found           
+NODE_1014      1800           no             Not found           
+NODE_1037      1776           no             Not found           
+NODE_1038      1776           no             Not found           
+NODE_1044      1769           no             Not found           
+NODE_1059      1751           no             Not found           
+NODE_1067      1744           no             Not found           
+NODE_1069      1743           no             Not found           
+NODE_1073      1740           no             Not found           
+NODE_1075      1739           no             Not found           
+NODE_1093      1720           no             Not found           
+NODE_1096      1716           no             Not found           
+NODE_1120      1691           no             Not found           
+NODE_1133      1678           no             Not found           
+NODE_1135      1677           no             Not found           
+NODE_1141      1671           no             Not found           
+NODE_1152      1660           no             Not found           
+NODE_1157      1653           no             Not found           
+NODE_1165      1644           no             Not found           
+NODE_1180      1631           no             Not found           
+NODE_1188      1616           no             Not found           
+NODE_1199      1607           no             Not found           
+NODE_1207      1600           no             Not found           
+NODE_1220      1588           no             Not found           
+NODE_1256      1563           no             Not found           
+NODE_1279      1546           no             Not found           
+NODE_1292      1535           no             Not found           
+NODE_1296      1531           no             Not found           
+NODE_1332      1503           no             Not found           
+NODE_1342      1495           no             Not found           
+NODE_1353      1484           no             Not found           
+NODE_1365      1473           no             Not found           
+NODE_1368      1470           no             Not found           
+NODE_1382      1459           no             Not found           
+NODE_1398      1452           no             Not found           
+NODE_1402      1448           no             Not found           
+NODE_1415      1441           no             Not found           
+NODE_1418      1439           no             Not found           
+NODE_1419      1438           no             Not found           
+NODE_1456      1407           no             Not found           
+NODE_1481      1388           no             Not found           
+NODE_1497      1377           no             Not found           
+NODE_1506      1373           no             Not found           
+NODE_1577      1324           no             Not found           
+NODE_1578      1323           no             Not found           
+NODE_1581      1322           no             Not found           
+NODE_1587      1319           no             Not found           
+NODE_1611      1306           no             Not found           
+NODE_1633      1292           no             Not found           
+NODE_1708      1245           no             Not found           
+NODE_1723      1239           no             Not found           
+NODE_1762      1217           no             Not found           
+NODE_1792      1204           no             Not found           
+NODE_1804      1199           no             Not found           
+NODE_1813      1196           no             Not found           
+NODE_1816      1195           no             Not found           
+NODE_1825      1190           no             Not found           
+NODE_1828      1187           no             Not found           
+NODE_1833      1184           no             Not found           
+NODE_1870      1170           no             Not found           
+NODE_1883      1166           no             Not found           
+NODE_1905      1156           no             Not found           
+NODE_1906      1156           no             Not found           
+NODE_1912      1154           no             Not found           
+NODE_1918      1152           no             Not found           
+NODE_1953      1135           no             Not found           
+NODE_1968      1130           no             Not found           
+NODE_1983      1126           no             Not found           
+NODE_1994      1121           no             Not found           
+NODE_2026      1110           no             Not found           
+NODE_2039      1106           no             Not found           
+NODE_2045      1104           no             Not found           
+NODE_2074      1094           no             Not found           
+NODE_2089      1090           no             Not found           
+NODE_2128      1073           no             Not found           
+NODE_2147      1065           no             Not found           
+NODE_2158      1062           no             Not found           
+NODE_2163      1059           no             Not found           
+NODE_2177      1052           no             Not found           
+NODE_2201      1043           no             Not found           
+NODE_2216      1038           no             Not found           
+NODE_2220      1037           no             Not found           
+NODE_2257      1022           no             Not found           
+NODE_2271      1018           no             Not found           
+NODE_2304      1008           no             Not found           
+NODE_2323      1001           no             Not found           
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+NODE_6         175    1915   1741       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+NODE_6         1987   3325   1339       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+NODE_6         3318   3600   283        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+NODE_6         3735   4239   505        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+NODE_6         4239   5379   1141       +          CDS    CYTB       cytochrome b                      1              
+NODE_6         5469   6402   934        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+NODE_6         6429   7799   1371       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+NODE_6         7859   8674   816        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+NODE_6         9522   10551  1030       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+NODE_6         10764  12306  1543       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+NODE_6         12374  13061  688        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+NODE_6         13271  13430  160        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+NODE_6         13423  14104  682        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+NODE_6         14103  14891  789        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+NODE_6         14954  15308  355        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:            0
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                15
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+tRNA-Ala                             1
+tRNA-Arg                             1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Cys                             1
+tRNA-Gln                             1
+tRNA-Glu                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             2
+tRNA-Lys                             1
+tRNA-Met                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             2
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+If you got the mitochondrial genome using the `findmitoscaf`
+or `assemble` module of MitoZ, the missing genes might be
+found from the '*.high_abundance*' and '*.low_abundance*' files
+in the 'tmp' directory!

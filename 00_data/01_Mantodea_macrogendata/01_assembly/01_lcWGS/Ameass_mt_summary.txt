@@ -1,0 +1,164 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+NODE_2         16189          no             Not found           
+NODE_3         15634          no             Tenodera sinensis   
+NODE_5         14186          no             Not found           
+NODE_22        6918           no             Not found           
+NODE_23        6861           no             Not found           
+NODE_45        5768           no             Not found           
+NODE_54        5460           no             Not found           
+NODE_59        5406           no             Not found           
+NODE_62        5387           no             Not found           
+NODE_72        5222           no             Not found           
+NODE_74        5100           no             Not found           
+NODE_99        4555           no             Not found           
+NODE_100       4553           no             Not found           
+NODE_107       4489           no             Not found           
+NODE_128       4272           no             Not found           
+NODE_129       4263           no             Not found           
+NODE_131       4257           no             Not found           
+NODE_132       4252           no             Not found           
+NODE_137       4172           no             Not found           
+NODE_162       3940           no             Not found           
+NODE_171       3852           no             Not found           
+NODE_204       3515           no             Not found           
+NODE_206       3510           no             Not found           
+NODE_213       3474           no             Not found           
+NODE_215       3464           no             Not found           
+NODE_219       3437           no             Not found           
+NODE_222       3433           no             Not found           
+NODE_224       3386           no             Not found           
+NODE_227       3326           no             Not found           
+NODE_237       3266           no             Not found           
+NODE_238       3258           no             Not found           
+NODE_240       3244           no             Not found           
+NODE_241       3242           no             Not found           
+NODE_245       3224           no             Not found           
+NODE_274       3027           no             Not found           
+NODE_278       3007           no             Not found           
+NODE_301       2893           no             Not found           
+NODE_315       2828           no             Not found           
+NODE_326       2766           no             Kuwayamaea chinensis
+NODE_332       2748           no             Not found           
+NODE_333       2748           no             Not found           
+NODE_346       2691           no             Not found           
+NODE_348       2687           no             Not found           
+NODE_349       2681           no             Not found           
+NODE_356       2668           no             Not found           
+NODE_369       2600           no             Not found           
+NODE_380       2551           no             Not found           
+NODE_385       2528           no             Not found           
+NODE_395       2501           no             Not found           
+NODE_419       2420           no             Not found           
+NODE_421       2418           no             Not found           
+NODE_438       2370           no             Not found           
+NODE_455       2301           no             Not found           
+NODE_475       2257           no             Not found           
+NODE_506       2180           no             Not found           
+NODE_516       2158           no             Not found           
+NODE_533       2111           no             Not found           
+NODE_556       2052           no             Not found           
+NODE_557       2051           no             Not found           
+NODE_564       2042           no             Not found           
+NODE_575       2018           no             Not found           
+NODE_588       2008           no             Not found           
+NODE_617       1971           no             Not found           
+NODE_618       1968           no             Not found           
+NODE_619       1966           no             Not found           
+NODE_622       1964           no             Not found           
+NODE_634       1942           no             Not found           
+NODE_657       1874           no             Not found           
+NODE_667       1855           no             Not found           
+NODE_672       1847           no             Not found           
+NODE_683       1832           no             Not found           
+NODE_688       1822           no             Not found           
+NODE_700       1801           no             Not found           
+NODE_729       1733           no             Not found           
+NODE_743       1716           no             Not found           
+NODE_756       1691           no             Not found           
+NODE_776       1665           no             Not found           
+NODE_796       1638           no             Not found           
+NODE_838       1577           no             Not found           
+NODE_852       1565           no             Not found           
+NODE_853       1565           no             Not found           
+NODE_860       1554           no             Not found           
+NODE_863       1550           no             Not found           
+NODE_891       1519           no             Not found           
+NODE_899       1509           no             Not found           
+NODE_925       1478           no             Not found           
+NODE_928       1474           no             Not found           
+NODE_966       1433           no             Not found           
+NODE_1023      1368           no             Not found           
+NODE_1111      1286           no             Not found           
+NODE_1143      1267           no             Not found           
+NODE_1161      1257           no             Not found           
+NODE_1185      1246           no             Not found           
+NODE_1204      1230           no             Not found           
+NODE_1233      1206           no             Not found           
+NODE_1239      1200           no             Not found           
+NODE_1249      1193           no             Not found           
+NODE_1261      1184           no             Not found           
+NODE_1326      1132           no             Not found           
+NODE_1342      1124           no             Not found           
+NODE_1343      1124           no             Not found           
+NODE_1357      1109           no             Not found           
+NODE_1393      1089           no             Not found           
+NODE_1427      1069           no             Not found           
+NODE_1466      1050           no             Not found           
+NODE_1483      1043           no             Not found           
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+NODE_3         18     1617   1600       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+NODE_3         2022   2376   355        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+NODE_3         2439   3227   789        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+NODE_3         3226   3907   682        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+NODE_3         3900   4059   160        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+NODE_3         4237   4924   688        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+NODE_3         5005   6547   1543       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+NODE_3         6781   7810   1030       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+NODE_3         8699   9487   789        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+NODE_3         9552   10920  1369       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+NODE_3         10947  11883  937        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+NODE_3         11975  13112  1138       -          CDS    CYTB       cytochrome b                      1              
+NODE_3         13111  13615  505        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+NODE_3         13746  14028  283        +          CDS    ND4L       NADH dehydrogenase subunit 4L     2              
+NODE_3         14021  15359  1339       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+NODE_326       841    1118   278        -          CDS    ND4L       NADH dehydrogenase subunit 4L     2              
+
+
+Protein coding genes totally found: 14
+tRNA genes totally found:            0
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                16
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+tRNA-Ala                             1
+tRNA-Arg                             1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Cys                             1
+tRNA-Gln                             1
+tRNA-Glu                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             2
+tRNA-Lys                             1
+tRNA-Met                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             2
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+If you got the mitochondrial genome using the `findmitoscaf`
+or `assemble` module of MitoZ, the missing genes might be
+found from the '*.high_abundance*' and '*.low_abundance*' files
+in the 'tmp' directory!

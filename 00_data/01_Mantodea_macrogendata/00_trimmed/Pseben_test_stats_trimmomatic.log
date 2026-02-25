@@ -1,0 +1,7 @@
+TrimmomaticPE: Started with arguments:
+ -threads 20 -phred33 16-CI1f_1.fastq.gz 16-CI1f_2.fastq.gz 16-CI1f_1_paired.fastq 16-CI1f_1_unpaired.fastq 16-CI1f_2_paired.fastq 16-CI1f_2_unpaired.fastq ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+ILLUMINACLIP: Using adapter file from Trimmomatic installation folder: /home/STUDENTI/pietro.bacconi/miniforge3/envs/assembly/share/trimmomatic-0.40-0/adapters/TruSeq3-PE.fa
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Input Read Pairs: 14797728 Both Surviving: 14059796 (95.01%) Forward Only Surviving: 651541 (4.40%) Reverse Only Surviving: 54607 (0.37%) Dropped: 31784 (0.21%)
+TrimmomaticPE: Completed successfully

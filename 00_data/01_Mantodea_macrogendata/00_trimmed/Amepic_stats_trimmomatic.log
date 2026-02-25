@@ -1,0 +1,7 @@
+TrimmomaticPE: Started with arguments:
+ -threads 20 -phred33 ../00_data/41-K26_1.fastq.gz ../00_data/41-K26_2.fastq.gz Amepic_1_paired.fastq Amepic_1_unpaired.fastq Amepic_2_paired.fastq Amepic_2_unpaired.fastq ILLUMINACLIP:../trimmomatic-0.40/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+ILLUMINACLIP: Using adapter file from current working directory: /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/00_data/01_macrogen_rawdata/01_trimmed/../trimmomatic-0.40/adapters/TruSeq3-PE.fa
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Input Read Pairs: 16435239 Both Surviving: 15707695 (95.57%) Forward Only Surviving: 643648 (3.92%) Reverse Only Surviving: 57217 (0.35%) Dropped: 26679 (0.16%)
+TrimmomaticPE: Completed successfully

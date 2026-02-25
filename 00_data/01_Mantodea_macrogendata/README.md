@@ -71,7 +71,7 @@ zgrep -c "^@" <SPECIES_CODE>_1_2Mbp.fq
 
 #### Run SPAdes
 
-Assembly output show `contigs.fasta`. After check contig length (15-17kbp) and coverage (>=10x) extract candidate contigs and BLAST them to see if are what you are looking for.
+Assembly output show `contigs.fasta`. After check contig length (15-17kbp) and coverage (>=10x) extract candidate contigs and BLAST them to see if are what you are looking for. After blasting, going on [MITOS2](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fmitos2%2Fmitos2%2F2.1.3%20galaxy0) to annotate mitogenomes, avaible on __GALAXY__, open source web-based platform for data intensive biomedical research.  
 
 ```bash
 #general

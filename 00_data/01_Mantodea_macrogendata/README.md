@@ -24,7 +24,6 @@ trimmomatic PE -threads 20 -phred33 ../00_data/16-CI1f_1.fastq.gz ../00_data/16-
 
 # Assembly with SPAdes and lcWGS
  
-
 ## SPAdes 17-12-2025
 
 #### Install and test 
@@ -71,8 +70,7 @@ zgrep -c "^@" <SPECIES_CODE>_1_2Mbp.fq
 
 #### Run SPAdes
 
-Assembly output show `contigs.fasta`. After check contig length (15-17kbp) and coverage (>=10x) extract candidate contigs and BLAST them to see if are what you are looking for. After blasting, going on [MITOS2](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fmitos2%2Fmitos2%2F2.1.3%20galaxy0) to annotate mitogenomes, avaible on __GALAXY__, open source web-based platform for data intensive biomedical research.  
-
+Assembly output show `contigs.fasta`. After check contig length (15-17kbp) and coverage (>=10x) extract candidate contigs and BLAST them to see if are what you are looking for.   
 ```bash
 #general
 spades.py --only-assembler -t 8 -1 <SPECIES_CODE>_1_2Mbp.fq -2 <SPECIES_CODE>_2_2Mbp.fq -o <SPECIES_CODE>
@@ -80,8 +78,23 @@ spades.py --only-assembler -t 8 -1 <SPECIES_CODE>_1_2Mbp.fq -2 <SPECIES_CODE>_2_
 #extraction candidate contigs
 awk '/^>NODE_<NODE_NUMBER>_/{print;p=1;next} /^>/{p=0} p' contigs.fasta > node_<NODE_NUMBER>.fasta    
 ```
+After blasting, going on [MITOS2](https://usegalaxy.org/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fmitos2%2Fmitos2%2F2.1.3%20galaxy0) to annotate mitogenomes, avaible on __GALAXY__, open source web-based platform for data intensive biomedical research.
 
+MITOS2 options:
++ Invertebrate (5)
++ RefSeq63 Metazoa
++ output:nucleotide FASTA
++ Advances options: Final overlap 50 - fragment overlap 10 - flag annotate best options
++ Advances options for protein: select first two flags down below
 
+```bash
+for file in work/*.fasta; do
+    base=$(basename "$file" .fasta)
+    sed -i 's/^>.*; *\([^;]*\) */>[gene=\1]/' "$file"
+    sed -i "s/^>/>${base}_/" "$file"
+    sed -i '/^>/ s/ /_/g' "$file"
+done
+```
 
 
 ## lcWGS 30-01-2026
@@ -121,3 +134,26 @@ for file in *.fasta; do
     sed -i -E "s/>NODE_[0-9]+_[0-9]+-[0-9]+:[+-] (.*)/>${base}_[gene=\1]/" "$file"
 done
 ```
+## Resolving Amedum 17-02-2026
+Every subsmaples, from 2Mbvp to 12Mbp, of *Ameles dumonti* didn't output sufficient good assembly. Every BLAST of contigs from those analysis didn't match Mantodea mitochondrial genome. For this reason I assembled __Amedum__ with all trimmed reads avaible, searching with __blastn__ command which contigs are candidable......
+
+
+```bash
+#BLASTN 2.14.1+
+#Reference: Zheng Zhang, Scott Schwartz, Lukas Wagner, and Webb Miller (2000), "A greedy algorithm for aligning DNA sequences", J Comput Biol 2000; 7(1-2):203-14.
+makeblastdb -in contigs.fasta -dbtype nucl -parse_seqids
+blastn -query cox1ameand.fasta -db contigs.fasta
+```
+
+# Assembly results
+
+| Method | Species | Code | Length(bp) | Coverage | Reads(bp) | 
+| :---: | :---:	| :---: | :---: | :---: | :---:   
+| lcWGS | *Ameles_assoi* | Ameass | 15634 | >10x | 1M |
+| lcWGS | *Ameles_decolor* | Amedec | 15664 | >10x | 2M |
+| lcWGS | *Apteromantis_aptera* | Aptapt | 16228 | >10x | 2M |
+| lcWGS | *Pseudoyersinia_betancuriae* | Psebet | 15618 | >10x | 2M |
+| SPAdes | *Ameles_spallanzania* | Amespa2 | 15714 | 12x | 2M |
+| SPAdes | *Ameles_picteti* | Amepic | 15652 | 16x | 4M |
+| SPAdes | *Rivetina_baetica* | Rivbae | 15613 | 16x | 4M |
+| SPAdes | *Ameles_dumonti* | Amedum | 15678 | 8x | all |

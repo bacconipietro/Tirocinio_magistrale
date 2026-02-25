@@ -109,14 +109,13 @@ Once canditate contigs are reached, it's necessary to merge Annotation informati
 ```bash 
 #cp cordinates in > positions_Psebet.txt
 
-less mt_summary.txt 
-awk '{print $1"\t"($2-1)"\t"$3"\t"$7"\t.\t"$5}' positions_Psebet.txt > positions_Psebet.bed
-
-seqkit subseq --bed positions_Psebet.bed 16CI1f_Psebet.fasta -o annotated_16CI1f_Psebet.fasta
-
+less mt_summary.txt
 
 #redoo for all lcWGS outputs
+awk '{print $1"\t"($2-1)"\t"$3"\t"$7"\t.\t"$5}' positions_Psebet.txt > positions_Psebet.bed
+seqkit subseq --bed positions_Psebet.bed 16CI1f_Psebet.fasta -o annotated_16CI1f_Psebet.fasta
 
+#aimplify headers
 for file in *.fasta; do
     base=$(basename "$file" .fasta)
     sed -i -E "s/>NODE_[0-9]+_[0-9]+-[0-9]+:[+-] (.*)/>${base}_[gene=\1]/" "$file"

@@ -1,111 +1,124 @@
-# Trimmomatic e SPAdes 16-12-2025
+# Trimming short Reads 16-12-2025
 
+#### Installing trimmomatic
+```bash
+wget https://github.com/usadellab/Trimmomatic/releases/download/v0.40/Trimmomatic-0.40.zip
+unzip Trimmomatic-0.40.zip
+java --version #check java version
+conda create --name assembly
+conda activate assembly
+conda install -c bioconda trimmomatic
+```
+
+#### Run trimmomatic
+
+```bash
+#general 
+trimmomatic PE -threads 20 -phred33 ../00_data/<SPECIE_READS_CODE>_1.fastq.gz ../00_data/<SPECIE_READS_CODE>_2.fastq.gz <SPECIES_CODE>_1_paired.fastq <SPECIES_CODE>_1_unpaired.fastq <SPECIES_CODE>_2_paired.fastq <SPECIES_CODE>_2_unpaired.fastq ILLUMINACLIP:../trimmomatic-0.40/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 2> 00_stats/<SPECIES_CODE>_stats_trimmomatic.log 
+
+#example of Pseudoyersinia betancuriae
+trimmomatic PE -threads 20 -phred33 ../00_data/16-CI1f_1.fastq.gz ../00_data/16-CI1f_2.fastq.gz Psebet_1_paired.fastq Psebet_1_unpaired.fastq Psebet_2_paired.fastq Psebet_2_unpaired.fastq ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 2> Psebet_stats_trimmomatic.log 
+```
 
 -----
 
-# Undestanding lcWGS outputs 30-01-2026
+# Assembly with SPAdes and lcWGS
+ 
 
-### Theory:
+## SPAdes 17-12-2025
+
+#### Install and test 
+```bash
+conda activate assembly
+wget https://github.com/ablab/spades/releases/download/v4.2.0/SPAdes-4.2.0-Linux.tar.gz
+conda install -c bioconda SPAdes
+
+#test run
+spades.py --test
+```
+
+#### Subsamples short reads
+
+We subsample reads data to 2Mbp file sequence. If there's no positive result after assembling it's possible to rise subsample content (e.g. 4Mbp, 8Mbp, 10Mbp, 12Mbp).
+```bash
+
+#general
+for file in 01_trimmed/*/*_<FORWARD OR REVERSE>_paired.fastq; 
+do  
+base=$(basename "$file" .fastq) 
+seqtk sample -s100 "$file" <READS_NUMBER> > "${base}_<FORWARD OR REVERSE>_<READS_NUMBER>Mbp.fq" 
+done
+
+
+#Subsample of 2Mbp
+for file in 01_trimmed/*/*_1_paired.fastq; 
+do  
+base=$(basename "$file" .fastq) 
+seqtk sample -s100 "$file" 2000000 > "${base}_1_2Mbp.fq" 
+done
+
+
+for file in 01_trimmed/*/*_2_paired.fastq; 
+do  
+base=$(basename "$file" .fastq) 
+seqtk sample -s100 "$file" 2000000 > "${base}_2_2Mbp_.fq" 
+done
+
+
+#counting reads number to check if the for worked
+zgrep -c "^@" <SPECIES_CODE>_1_2Mbp.fq 
+```
+
+#### Run SPAdes
+
+Assembly output show `contigs.fasta`. After check contig length (15-17kbp) and coverage (>=10x) extract candidate contigs and BLAST them to see if are what you are looking for.
+
+```bash
+#general
+spades.py --only-assembler -t 8 -1 <SPECIES_CODE>_1_2Mbp.fq -2 <SPECIES_CODE>_2_2Mbp.fq -o <SPECIES_CODE>
+
+#extraction candidate contigs
+awk '/^>NODE_<NODE_NUMBER>_/{print;p=1;next} /^>/{p=0} p' contigs.fasta > node_<NODE_NUMBER>.fasta    
+```
+
+
+
+
+## lcWGS 30-01-2026
+
+#### Theory:
 
 Your script is designed to run a "parameter sweep"—it tries to assemble the genome using increasing numbers of reads (50k, 100k, etc.) to find the minimum required for a good assembly.
-
 It's data-driven: The assembler (MitoZ) looks for an overlap between the start and end of the sequence. If the coverage drops at the ends or the sequence is repetitive, it cannot confidently join them, so it outputs a linear sequence.
-
 The Annotation consequence: Because the output file is technically linear, the Annotation step (which gives you the warning) treats it as a straight line. This is why your tRNAs are missing. If a gene sits exactly across the "break" point of the circle, the linear annotator cannot see it.
 
-
-
-Check circularity in Ameass mt_assemble:
-
-path sweep_single_ameass/runs/Ameass/20260123_114612_688230009/mt_sweep/reads_1000000
-
++ Run `run_mt_sweep_single.sh`:
 ```bash
-awk '/^>NODE_2($|[^0-9])/{print;p=1;next} /^>/{p=0} p' mtcandidate.fa > node_2.fasta
-```
-```bash
-python3 -c "
-import sys
+ln -s /home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/99_scripts/lcWGS/lcWGS_env.from_history.yaml
+ln -s /home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/99_scripts/lcWGS/run_mt_sweep_single.sh
 
-# Change this to your actual filename if different
-INPUT_FILE = 'node_2.fasta'
+mamba create -f lcWGS_env.from_history.yaml -n lcWGS
+mamba activate lcWGS
 
-def check_circularity(file_path):
-    seq = ''
-    try:
-        with open(file_path) as f:
-            for line in f:
-                line = line.strip()
-                # Skip header lines, read only sequence
-                if not line.startswith('>'):
-                    seq += line
-    except FileNotFoundError:
-        print(f'Error: File {file_path} not found.')
-        sys.exit(1)
-
-    if not seq:
-        print('Error: No sequence data found in file.')
-        sys.exit(1)
-
-    L = len(seq)
-    print(f'Analyzing sequence (Length: {L} bp)')
-    
-    # Check for overlap at the ends (from 10bp up to 1000bp)
-    overlap_len = 0
-    # We loop up to 2000 just in case the overlap is large
-    for i in range(10, 2000):
-        # Check if the start (prefix) matches the end (suffix) of length i
-        suffix = seq[-i:]
-        if seq.startswith(suffix):
-            overlap_len = i
-    
-    print(f'- Overlap detected: {overlap_len} bp')
-    
-    if overlap_len > 0:
-        print(f'\nCONCLUSION: The genome IS CIRCULAR.') 
-        print(f'To fix: You should trim {overlap_len} bp from the end of the sequence to avoid duplication.')
-    else:
-        print('\nCONCLUSION: No direct overlap found. It is likely linear or has a gap.')
-
-if __name__ == '__main__':
-    check_circularity(INPUT_FILE)
-"
+bash run_mt_sweep_single.sh -1 16-CI1f_1.fastq.gz  -2 16-CI1f_2.fastq.gz -s Pseben -r sweep_single_pseben
 ```
 
-
-Output: CONCLUSION: No direct overlap found. It is likely linear or has a gap. 
-
-```
-Ameass: all outputs (mt.fasta,mt.gbf) 
-1000000 OK      YES     YES     NODE_2  16189   106     313511  72.3694 100.00
-Blastn: Select seq AY859585.1	Mantis religiosa internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2, complete sequence; and 28S ribosomal RNA gene, partial sequence	Mantis religiosa	6250	6522	(query cover=26%)	0.0	94.78%	4723	AY859585.1     NEGATIVE
+Once canditate contigs are reached, it's necessary to merge Annotation information with respective contig. 
 
 
-Amedec: all outputs (mt.fasta,mt.gbf) 
-2000000 OK      YES     YES     NODE_3  15664   297     808140  33.9074 99.73 
-Blastn: Eremiaphila sp. mitochondrion, complete genome	Eremiaphila sp.	NA	2910531	9079	13645	(query cover=99%)	0.0	83.30%	15583	MG888444.1   POSITIVE
+```bash 
+#cp cordinates in > positions_Psebet.txt
+
+less mt_summary.txt 
+awk '{print $1"\t"($2-1)"\t"$3"\t"$7"\t.\t"$5}' positions_Psebet.txt > positions_Psebet.bed
+
+seqkit subseq --bed positions_Psebet.bed 16CI1f_Psebet.fasta -o annotated_16CI1f_Psebet.fasta
 
 
-Aptapt: all outputs (mt.fasta,mt.gbf) 
-2000000 OK      YES     YES     NODE_4  16427   217     612782  172.7433        100.00
-Blastn: Select seq AY859585.1	Mantis religiosa internal transcribed spacer 1, partial sequence; 5.8S ribosomal RNA gene and internal transcribed spacer 2, complete sequence; and 28S ribosomal RNA gene, partial sequence	Mantis religiosa	6250	6522	(query cover=26%)	0.0	94.78%	4723	AY859585.1    		NEGATIVE
+#redoo for all lcWGS outputs
 
-
-Amedum: runs failed, even 2 millions reads 
-2000000 FAILED_VALIDATION_NO_HITS       NO      NO   No validated contigs detected in MitoZ summary.
-
-
-Amepic: runs failed, 2000000 FAILED_MITOZ    NO   NO 
-
-
-Amespa2: all outputs (mt.fasta,mt.gbf) 
-1000000 OK      YES     YES     NODE_5  12293   166     359625  61.6058 99.47 
-Blastn: Select seq OZ392354.1	Schoenobius gigantellus genome assembly, chromosome: 9	Schoenobius gigantellus	60.2	60.2	query cover=1%	0.010	81.33%	40936626	OZ392354.1
-
-
-Pseben: all outputs (mt.fasta,mt.gbf) 
-2000000 OK      YES     YES     NODE_1  19102   227     705455  36.1233 98.49
-Blastn: Select seq OZ390435.1	Taeniapion urticarium genome assembly, chromosome: 8	Taeniapion urticarium	62.1	62.1	(query cover=0%)	0.004	100.00%	56091572	OZ390435.1
-
-
-Rivbae: runs failed 2000000 FAILED_VALIDATION_NO_HITS   NO   NO  No validated contigs detected in MitoZ summary.
+for file in *.fasta; do
+    base=$(basename "$file" .fasta)
+    sed -i -E "s/>NODE_[0-9]+_[0-9]+-[0-9]+:[+-] (.*)/>${base}_[gene=\1]/" "$file"
+done
 ```

@@ -135,14 +135,50 @@ for file in *.fasta; do
 done
 ```
 ## Resolving Amedum 17-02-2026
-Every subsmaples, from 2Mbvp to 12Mbp, of *Ameles dumonti* didn't output sufficient good assembly. Every BLAST of contigs from those analysis didn't match Mantodea mitochondrial genome. For this reason I assembled __Amedum__ with all trimmed reads avaible, searching with __blastn__ command which contigs are candidable......
+Every subsmaples, from 2Mbvp to 12Mbp, of *Ameles dumonti* didn't output sufficient good assembly. Every BLAST of contigs from those analysis didn't match Mantodea mitochondrial genome. For this reason I follow this pipeline:
++ Assemble __Amedum__ with all trimmed reads avaible
++ Blast with [blastn](https://anaconda.org/channels/bioconda/packages/blast/files?version=2.14.1&type=) all database contigs assembly against *Ameles_andrea* COX1 
++ Chose best balsted contig from different analysis (with different reads subsample).
++ Mapping short reads with [Minimap2](https://github.com/lh3/minimap2/releases/tag/v2.26) on raw assembly contig and polishing with [Hypo](https://github.com/kensung-lab/hypo)   
 
-
+Blast:
 ```bash
 #BLASTN 2.14.1+
 #Reference: Zheng Zhang, Scott Schwartz, Lukas Wagner, and Webb Miller (2000), "A greedy algorithm for aligning DNA sequences", J Comput Biol 2000; 7(1-2):203-14.
 makeblastdb -in contigs.fasta -dbtype nucl -parse_seqids
 blastn -query cox1ameand.fasta -db contigs.fasta
+```
+
+Mapping:
+```bash
+#script of Amedum with Minimap2
+minimap2 -ax sr --MD -t 6 node_18_runall.fasta Amedum_1_paired.fastq  Amedum_2_paired.fastq > Amedum_raw_sr.sam
+samtools view -Sb Amedum_raw_sr.sam > Amedum_raw_sr.bam
+rm Amedum_raw_sr.sam
+samtools sort -@6 -o Amedum_raw_sr_sorted.bam Amedum_raw_sr.bam
+samtools index Amedum_raw_sr_sorted.bam
+rm Amedum_raw_sr.bam
+
+#run script
+bash mapping_Amedum.sh
+samtools flagstat Amedum_raw_sr_sorted.bam
+```
+
+Polishing: To run __Hypo__ it's necessary to obtain short reads coverage on assembly, using [mosdepth](https://anaconda.org/channels/bioconda/packages/mosdepth/overview)
+```bash
+
+#Installing and using mosdepth
+conda install bioconda::mosdepth
+mosdepth -n --fast-mode --by 500 Amedum_mito_coverage Amedum_raw_sr_sorted.bam
+cat Amedum_mito_coverage.mosdepth.summary.txt 
+
+#Installing and using Hypo
+conda create -n hypo_env -c bioconda -c conda-forge hypo python=3.8
+conda activate hypo_env
+hypo -d node_18_runall.fasta -r Amedum_1_paired.fastq Amedum_2_paired.fastq -s 15678 -c 45 -b Amedum_raw_sr_sorted.bam -t 10 -o Amedum_mito_polished.fasta
+
+#Annotate assembly with MITOS2 and then modify headers
+sed 's/^>.*; *\([^;]*\) */>59T3_Amedum_[gene=\1]/' 59T3_Amedum_mitos.fasta > 59T3_Amedum.fasta
 ```
 
 # Assembly results

@@ -59,8 +59,8 @@ Tarachomantis_alaotrana	Tarala	KX434862.1	na	na	na	na	na	Mantidae	Tenoderinae	x
 Sphodromantis_viridis	Sphvir	KX434840.1	FJ806340.1	AY491223.1	GU064761.1	FJ802933.1	na	Mantidae	Tenoderinae	x
 Polyspilota_griffinii	Polgri	KX434863.1	na	na	na	na	na	Mantidae	Tenoderinae	x
 Plistospilota_sp.	Plispe	KX434821.1	AY491191.1	AY491250.1	AY491364.1	na	na	Mantidae	Tenoderinae	x
-Prohierodula_picta	Propic	KX434855.1	na  na  na  na  na  Mantidae	Tenoderinae	x
-Prohierodula_sp.	Prospe	KX434868.1	na  na  na  na  na	Mantidae	Tenoderinae	x
+Prohierodula_picta	Propic	KX434855.1	na	na	na	na	na	Mantidae	Tenoderinae	x
+Prohierodula_sp.	Prospe	KX434868.1	na	na	na	na	na	Mantidae	Tenoderinae	x
 Camelomantis_moultoni	Cammou	KX434812.1	FJ806388.1	FJ806587.1	FJ806751.1	FJ803027.1	na	Mantidae	Hierodulinae	PARTIAL
 Hierodula_majuscula	Hiemaj	KX434819.1	na	na	na	na	na	Mantidae	Hierodulinae	x
 Rhombodera_sp.	Rhospe	KX619654.1	na	na	GU066920.1	na	na	Mantidae	Hierodulinae	x
@@ -113,8 +113,8 @@ Mekongomantis_quinquespinosa	Mekqui	MN267041.1	OP856573.1	OP881391.1	OP831571.1	
 Rhombodera_latipronotum	Rholat	KX091864.1	OP856575.1	OP881393.1	OP831573.1	na	na	Mantidae	Hierodulinae	PARTIAL
 Creobroter_elongata	Creelo	KX091851.1	KR360561.1	KR360594.1	na	KR360716.1	na	Hymenopodidae	Hymenopodinae	x
 Parablepharis_kuhlii	Parkuh	KY689117.1	na	na	na	na	na	Hymenopodidae	Phyllothelyinae	x
-Phyllothelys_breve	Phybre	NC_086622.1	na  na  na  na  na	Hymenopodidae	Phyllothelyinae	x
-Phyllothelys_breve_2	Phybre2	MT024239.1	na  na  na  na  na	Hymenopodidae	Phyllothelyinae	x
+Phyllothelys_breve	Phybre	NC_086622.1	na	na	na	na	na	Hymenopodidae	Phyllothelyinae	x
+Phyllothelys_breve_2	Phybre2	MT024239.1	na	na	na	na	na	Hymenopodidae	Phyllothelyinae	x
 Raptrix_fusca	Rapfus	NC_077477.1	FJ806378.1	FJ806577.1	FJ806741.1	na	na	Acanthopidae	Acontiothespinae	x
 Leptomantella_sp.	Lepspe	OM202571.1	FJ806489.1	FJ806620.1	EF384115.1	FJ803066.1	na	Leptomantellidae	na	x
 Creobroter_sp.	Crespe	MW222469.1	FJ806370.1	FJ806569.1	FJ806734.1	FJ803001.1	na	Hymenopodidae	Hymenopodinae	x
@@ -165,7 +165,7 @@ Paratoxodera_gigliotosi	Pargig	MG888457.1	na	na	na	na	na	Toxoderidae	Toxoderinae
 Ambivia_parapopa	Ambpar	MG888436.1	na	na	na	na	na	Hymenopodidae	Acromantinae	x
 Amorphoscelis_sp.	Amospe	MG888437.1	na	na	na	na	na	Hymenopodidae	Acromantinae	x
 Hymenopus_coronatoides	Hymcor	MG888449.1	na	na	na	na	na	Hymenopodidae	Hymenopodinae	x
-Leptomantella_lactea	Leplac	MG888453.1	na	na	na	na	na	Leptomantellidae		x
-Metallyticus_splendidus	Metspl	MG888455.1	na	na	na	na	na	Metallyticidae		x
+Leptomantella_lactea	Leplac	MG888453.1	na	na	na	na	na	Leptomantellidae	na	x
+Metallyticus_splendidus	Metspl	MG888455.1	na	na	na	na	na	Metallyticidae		na	x
 Parablepharis_kuhlii_asiatica	Parkuhasi	MG888456.1	na	na	na	na	na	Hymenopodidae	Phyllothelyinae	x
 Sinomiopteryx_guangxiensis	Singua	MG888464.1	na	na	na	na	na	Thespidae	Pseudomiopteriginae	x

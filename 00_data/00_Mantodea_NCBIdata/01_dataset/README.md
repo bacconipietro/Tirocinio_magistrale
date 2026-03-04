@@ -225,23 +225,6 @@ We have 3 missing species in **ND2** fasta file. After review it's clear that *I
 
 # Dataset Folders Net 11-12-2025 
 
-### Count Families and Subfamilies
-```
-cut -f 9 Mantodea_NCBIdataset.tsv | sort| uniq | wc -l
-cut -f 10 Mantodea_NCBIdataset.tsv | sort | uniq | wc -l
-```
-
-In ouput we have **13 Families**, **36 Subfamilies** 
-
-### Counting Genera
-```
-sed -E 's/_.+$//g' Species_Mantodea.txt > gen.txt 
-cat gen.txt | sort | uniq | wc -l      #(94)
-mv gen.txt Genera.txt
-```
-
-In output we have **94 unique Genera**
-
 ## Spltting fasta files into folders
 At first we need to copy all the 165 fasta genome files in a single folder which it's called Mantodea_foldersnet. We need to resolve the issue with fasta without rrnl and rrns genes:
 ```

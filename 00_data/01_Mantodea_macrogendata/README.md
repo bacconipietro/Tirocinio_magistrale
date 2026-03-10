@@ -87,6 +87,12 @@ MITOS2 options:
 + Advances options: Final overlap 50 - fragment overlap 10 - flag annotate best options
 + Advances options for protein: select first two flags down below
 
+#### Flip possible reversed sequences:
+```bash
+bash /home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/99_scripts/reverse_downloads_failed.sh *.fasta
+```
+
+#### Simplify headers
 ```bash
 for file in work/*.fasta; do
     base=$(basename "$file" .fasta)
@@ -95,7 +101,7 @@ for file in work/*.fasta; do
     sed -i '/^>/ s/ /_/g' "$file"
 done
 ```
-
+-----
 
 ## lcWGS 30-01-2026
 
@@ -118,7 +124,6 @@ bash run_mt_sweep_single.sh -1 16-CI1f_1.fastq.gz  -2 16-CI1f_2.fastq.gz -s Pseb
 
 Once canditate contigs are reached, it's necessary to merge Annotation information with respective contig. 
 
-
 ```bash 
 #cp cordinates in > positions_Psebet.txt
 
@@ -127,13 +132,21 @@ less mt_summary.txt
 #redoo for all lcWGS outputs
 awk '{print $1"\t"($2-1)"\t"$3"\t"$7"\t.\t"$5}' positions_Psebet.txt > positions_Psebet.bed
 seqkit subseq --bed positions_Psebet.bed 16CI1f_Psebet.fasta -o annotated_16CI1f_Psebet.fasta
+```
 
-#aimplify headers
+#### Flip possible reversed seuquences
+```bash
+bash /home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/99_scripts/reverse_lcWGS.sh *.fasta 
+```
+
+#### Simplify headers
+```bash
 for file in *.fasta; do
     base=$(basename "$file" .fasta)
     sed -i -E "s/>NODE_[0-9]+_[0-9]+-[0-9]+:[+-] (.*)/>${base}_[gene=\1]/" "$file"
 done
 ```
+
 ## Resolving Amedum 17-02-2026
 Every subsmaples, from 2Mbvp to 12Mbp, of *Ameles dumonti* didn't output sufficient good assembly. Every BLAST of contigs from those analysis didn't match Mantodea mitochondrial genome. For this reason I follow this pipeline:
 + Assemble __Amedum__ with all trimmed reads avaible

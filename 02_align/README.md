@@ -8,9 +8,9 @@ mkdir 01_globalpair
 mkdir 02_localpair
 for file in /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/01_mtGENES/mt_genes/*.fasta; do
  base=$(basename "$file" .fasta)
- mafft --maxiterate 1000 --preservecase --genafpair "$file" >  "00_genafpair/${base}_aligned.fasta" 
- mafft --maxiterate 1000 --preservecase --globalpair "$file" >  "01_globalpair/${base}_aligned.fasta" 
- mafft --maxiterate 1000 --preservecase --localpair "$file" >  "02_localpair/${base}_aligned.fasta" 
+ mafft --adjustdirection --maxiterate 1000 --preservecase --genafpair "$file" >  "00_genafpair/${base}_aligned.fasta" 
+ mafft --adjustdirection --maxiterate 1000 --preservecase --globalpair "$file" >  "01_globalpair/${base}_aligned.fasta" 
+ mafft --adjustdirection --maxiterate 1000 --preservecase --localpair "$file" >  "02_localpair/${base}_aligned.fasta" 
 done
 ```
 Align AA sequence
@@ -21,9 +21,9 @@ mkdir 01_globalpair
 mkdir 02_localpair
 for file in /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/01_mtGENES/AA/*.fasta; do
  base=$(basename "$file" .fasta)
- mafft --maxiterate 1000 --preservecase --genafpair "$file" >  "00_genafpair/${base}_aligned.fasta" 
- mafft --maxiterate 1000 --preservecase --globalpair "$file" >  "01_globalpair/${base}_aligned.fasta" 
- mafft --maxiterate 1000 --preservecase --localpair "$file" >  "02_localpair/${base}_aligned.fasta" 
+ mafft --adjustdirection --maxiterate 1000 --preservecase --genafpair "$file" >  "00_genafpair/${base}_aligned.fasta" 
+ mafft --adjustdirection --maxiterate 1000 --preservecase --globalpair "$file" >  "01_globalpair/${base}_aligned.fasta" 
+ mafft --adjustdirection --maxiterate 1000 --preservecase --localpair "$file" >  "02_localpair/${base}_aligned.fasta" 
 done
 ```
 -----

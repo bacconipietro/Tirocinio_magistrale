@@ -33,6 +33,28 @@ do
     fi
 done
 ```
+# Flip complement (reversed) sequences  09-03-2026
+
+The script 'reverse_downloads_complement.sh' runs on following directories, pattern `location=complement(..)`: 
++ downloads 
++ downloads_PCGS 
+
+```bash
+bash reverse_downloads_complement.sh /DATABIG/pietrobacconi/.../downloads -v -o /DATABIG/pietrobacconi/.../flipped_downloads
+bash reverse_downloads_compelemet.sh /DATABIG/pietrobacconi/.../downloads_PCGs -v -o /DATABIG/pietrobacconi/.../flipped_downloads_PCGs
+
+bash reverse_downloads_complement.sh /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/00_data/00_NCBI/00_Mitochondrial/Download_OutgroupNCBIdataset/00_download/downloads -v -o /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/00_data/00_NCBI/00_Mitochondrial/Download_OutgroupNCBIdataset/01_flipped/flipped_downloads
+
+bash reverse_downloads_complement.sh /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/00_data/00_NCBI/00_Mitochondrial/Download_OutgroupNCBIdataset/00_download/downloads_PCGs -v -o /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/00_data/00_NCBI/00_Mitochondrial/Download_OutgroupNCBIdataset/01_flipped/flipped_downloads_PCGs
+```
+
+Script to flip all complement rRNAs, the pattern is `:c`:
++ downloads_rRNAs
+
+```bash
+bash /home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/99_scripts/reverse_downloads_rRNAs.sh *.fasta 
+```
+
 # Simplify headers 19-11-2025
 
 + Upload di Mantodea_rrnl.fasta Mantodea_rrns.fasta

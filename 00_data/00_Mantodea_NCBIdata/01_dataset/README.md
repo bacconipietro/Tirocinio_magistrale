@@ -1,6 +1,6 @@
 # Download NCBI dataset 18-11-2025
 
-```
+```bash
 mkdir -p downloads downloads_PCGs downloads_failed downloads_txt
 set -uo pipefail
  
@@ -48,6 +48,14 @@ bash reverse_downloads_complement.sh /DATABIG/pietrobacconi/ncbi_datasets/refseq
 bash reverse_downloads_complement.sh /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/00_data/00_NCBI/00_Mitochondrial/Download_OutgroupNCBIdataset/00_download/downloads_PCGs -v -o /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/00_data/00_NCBI/00_Mitochondrial/Download_OutgroupNCBIdataset/01_flipped/flipped_downloads_PCGs
 ```
 
+Script 'reverse_downloads_failed.sh' runs on following directories, patter '-;':
++ downloads_failed
++ preassembly_data
+
+```bash
+bash /home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/99_scripts/reverse_downloads_failed.sh *.fasta
+```
+
 Script to flip all complement rRNAs, the pattern is `:c`:
 + downloads_rRNAs
 
@@ -58,24 +66,20 @@ bash /home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/99_scripts/reverse_downl
 # Simplify headers 19-11-2025
 
 + Upload di Mantodea_rrnl.fasta Mantodea_rrns.fasta
-```
+```bash
 mkdir Download_MantodeaNCBIdataset/downloads_rRNAs
 scp Desktop/data/rRNAs_downloads/*.fasta  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_MantodeaNCBIdataset/downloads_rRNAs/
 ```
 
 + Upload di AA001_Ameand.fasta AA003_Ameser.fasta AA005_Amespa.fasta
-```
+```bash
 scp Desktop/data/Luchetti\ data/MITOS_annotated/*.fasta  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Luchetti_data
 ```
 
 ### downloads
 
-```
+```bash
 mkdir Download_simplifyheaders_MantodeaNCBIdataset/downloads_simplify 
-
-directory((/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_MantodeaNCBIdataset)) > cp downloads/*.gene_fasta ../Download_simplifyheaders_MantodeaNCBIdataset/downloads_simplify 
-
-
 for file in downloads_simplify/*.gene_fasta; do
     base=$(basename "$file" .gene_fasta)
     header=$(head -n 1 "$file" | sed 's/^>//')
@@ -91,11 +95,8 @@ done
 
 ### downloads PCGs
 
-```
+```bash
 mkdir Download_simplifyheaders_MantodeaNCBIdataset/downloads_simplify_PCGs
-
-directory((/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_MantodeaNCBIdataset)) > cp downloads_PCGs/*.gene_fasta ../Download_simplifyheaders_MantodeaNCBIdataset/downloads_simplify_PCGs
-
 for file in downloads_simplify_PCGs/*.gene_fasta; do
     base=$(basename "$file" .gene_fasta)
     header=$(head -n 1 "$file" | sed 's/^>//')
@@ -113,7 +114,7 @@ done
 
 Keeping only the name and the accession
 
-```
+```bash
 mkdir working_directory
 cp Mantodea_rrns.fasta Mantodea_rrnl.fasta ../../working_directory/
 
@@ -125,7 +126,7 @@ done
 
 Species names Substitution with code (rrns/rrnl)
 
-```
+```bash
 ln -s /DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_MantodeaNCBIdataset/downloads_txt/downloads_only_PCGs.txt
 
 awk '
@@ -153,7 +154,7 @@ awk '
 Final correction adding gene string [gene=rrns]/[gene=rrnl]
 
 
-```
+```bash
 for file in downloads_simplify_rRNAs/Mantodea_rrnl_renamed.fasta; do
 base=$( basename "$file" .fasta)
     sed -i '/^>/ s/$/_\[gene=rrnl\]/' "$file"
@@ -170,7 +171,7 @@ mv Mantodea_rrnl_renamed.fasta Mantodea_rrnl_final.fasta
 
 
 ### failed downloads 
-```
+```bash
 mkdir Download_MantodeaNCBIdataset/downloads_failed
 scp Desktop/data/Failed_downloads/Unverified\ sequences\ MITOS\ annotated/*.fasta  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_MantodeaNCBIdataset/downloads_failed
 
@@ -186,7 +187,7 @@ done
 ```
 
 ### preassembly data
-```
+```bash
 mkdir Download_simplifyheaders_MantodeaNCBIdataset/luchetti_simplify
 scp Desktop/data/Luchetti\ data/MITOS_annotated/*.fasta  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_simplifyheaders_MantodeaNCBIdataset/luchetti_simplify
 
@@ -201,7 +202,7 @@ done
 # First 'grep' test 20-11-2025
 
 ### Grepping mt genes
-```
+```bash
 mkdir -p mt_genes_Mantodea
 for file in Download_simplifyheaders_MantodeaNCBIdataset/*/*.fasta; do
     awk '
@@ -233,7 +234,7 @@ done
 ```
 
 ### Counting tips per gene
-```
+```bash
 for file in mt_genes_Mantodea/*.fasta; do
 
     count=$(grep "^>" "$file" | wc -l)
@@ -249,7 +250,7 @@ We have 3 missing species in **ND2** fasta file. After review it's clear that *I
 
 ## Spltting fasta files into folders
 At first we need to copy all the 165 fasta genome files in a single folder which it's called Mantodea_foldersnet. We need to resolve the issue with fasta without rrnl and rrns genes:
-```
+```bash
 mv Mantodea_rrnl_final.fasta Mantodea_rrnl_final.fa
 mv Mantodea_rrns_final.fasta Mantodea_rrns_final.fa
 
@@ -266,7 +267,7 @@ done
 ```
 After solving rRNAs issue we start with create the **Folders Network**
 
-```
+```bash
 cut -f 9,10 Mantodea_NCBIdataset.tsv | tail -n +2 - | while IFS=$'\t' read family subfamily; do
   mkdir -p "$family"/"$subfamily"
 done

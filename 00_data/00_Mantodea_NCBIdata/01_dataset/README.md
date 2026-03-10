@@ -35,13 +35,13 @@ done
 ```
 # Simplify headers 19-11-2025
 
-### Upload di Mantodea_rrnl.fasta Mantodea_rrns.fasta
++ Upload di Mantodea_rrnl.fasta Mantodea_rrns.fasta
 ```
 mkdir Download_MantodeaNCBIdataset/downloads_rRNAs
 scp Desktop/data/rRNAs_downloads/*.fasta  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_MantodeaNCBIdataset/downloads_rRNAs/
 ```
 
-### Upload di AA001_Ameand.fasta AA003_Ameser.fasta AA005_Amespa.fasta
++ Upload di AA001_Ameand.fasta AA003_Ameser.fasta AA005_Amespa.fasta
 ```
 scp Desktop/data/Luchetti\ data/MITOS_annotated/*.fasta  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Luchetti_data
 ```
@@ -163,7 +163,7 @@ for file in downloads_simplify_failed/*.fasta; do
 done
 ```
 
-### luchetti data
+### preassembly data
 ```
 mkdir Download_simplifyheaders_MantodeaNCBIdataset/luchetti_simplify
 scp Desktop/data/Luchetti\ data/MITOS_annotated/*.fasta  STUDENTI^pietro.bacconi@137.204.142.152:/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/Download_simplifyheaders_MantodeaNCBIdataset/luchetti_simplify
@@ -176,7 +176,7 @@ for file in luchetti_simplify/*.fasta; do
 done
 ```
 
-# Grep Headers 20-11-2025
+# First 'grep' test 20-11-2025
 
 ### Grepping mt genes
 ```

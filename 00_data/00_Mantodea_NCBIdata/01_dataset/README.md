@@ -151,9 +151,41 @@ awk '
 ```
 1st error: *Rapttrix_fusca* OM910847.1 (wrong)  Manual final correction headers+sequences *Carrikerella sp.* OM910846.1
 2nd error: *Tamolanica_tamolana* (Tamtam header) became *Leptomantella_albella* (Lepalb). Manual correction, pay attention everytime the command is run.   
-Final correction adding gene string [gene=rrns]/[gene=rrnl]   
 WHY THIS HAPPEN: Tamtam and Lepalb are the only specimen with "NC_" accession, the for match the last accession of the list (Lepalb) and paste it on both sequences.
 PAT ATTENTION IN FUTURE WHEN YOU RUN THE COMMAND, FIX IT!
+
+## fixed
+
+```bash
+ln -s /DATABIG/pietrobacconi/..../downloads_only_PCGs.txt
+
+awk '
+    NR==FNR {
+        # Match accession: everything up to the first "_" after a digit
+        # e.g. "NC_007702.1_Tamtam" -> "NC_007702.1"
+        #      "KU201314.1_Thespe"  -> "KU201314.1"
+        if (match($0, /^[A-Z]+_[0-9]+\.[0-9]+|^[A-Z0-9]+\.[0-9]+/)) {
+            acc = substr($0, RSTART, RLENGTH)
+        }
+        map[acc] = $0
+        next
+    }
+    /^>/ {
+        header = substr($0, 2)
+        if (match(header, /^[A-Z]+_[0-9]+\.[0-9]+|^[A-Z0-9]+\.[0-9]+/)) {
+            acc = substr(header, RSTART, RLENGTH)
+        }
+        if (acc in map)
+            print ">" map[acc]
+        else
+            print $0
+        next
+    }
+    { print }
+' downloads_only_PCGs.txt Mantodea_rrnl.fasta > Mantodea_rrnl_renamed.fasta
+```
+Final correction adding gene string [gene=rrns]/[gene=rrnl]   
+
 ```bash
 for file in downloads_simplify_rRNAs/Mantodea_rrnl_renamed.fasta; do
 base=$( basename "$file" .fasta)
@@ -168,7 +200,6 @@ done
 mv Mantodea_rrnl_renamed.fasta Mantodea_rrnl_final.fasta
 mv Mantodea_rrnl_renamed.fasta Mantodea_rrnl_final.fasta
 ```
-
 
 ### failed downloads 
 ```bash

@@ -151,9 +151,9 @@ awk '
 ```
 1st error: *Rapttrix_fusca* OM910847.1 (wrong)  Manual final correction headers+sequences *Carrikerella sp.* OM910846.1
 2nd error: *Tamolanica_tamolana* (Tamtam header) became *Leptomantella_albella* (Lepalb). Manual correction, pay attention everytime the command is run.   
-Final correction adding gene string [gene=rrns]/[gene=rrnl]
-
-
+Final correction adding gene string [gene=rrns]/[gene=rrnl]   
+WHY THIS HAPPEN: Tamtam and Lepalb are the only specimen with "NC_" accession, the for match the last accession of the list (Lepalb) and paste it on both sequences.
+PAT ATTENTION IN FUTURE WHEN YOU RUN THE COMMAND, FIX IT!
 ```bash
 for file in downloads_simplify_rRNAs/Mantodea_rrnl_renamed.fasta; do
 base=$( basename "$file" .fasta)

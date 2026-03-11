@@ -42,3 +42,9 @@ for file in ../../../02_Alignments/01_AA/<align_mode>/*_aligned.fasta; do
 done
 ```
 
+After trimming we need to remove `_R_` pattern which is pasted by MAFFT flag when it reverses a sequence.
+```bash
+for ile in *_trimmed.fasta; do
+sed -i 's/_R_//' "$file"
+done
+```

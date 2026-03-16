@@ -5,8 +5,8 @@
 ## -------------------------
 ## SETTINGS
 ## -------------------------
-tree1_path <- "/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/04_IQtree/01_runs/00_nucleotide/00_genafpair/mantids_nu_genaf_ML_MP.contree"
-tree2_path <- "/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/04_IQtree/01_runs/00_nucleotide/00_genafpair/without_3rd/mantids_nu_genaf_ML_W3_MP.contree"
+tree1_path <- "/home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/03_IQtree/mantids_nu_genaf_ML_MP_taxon.nwk"
+tree2_path <- "/home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/03_IQtree/mantids_nu_genaf_ML_W3_MP_taxon.nwk"
 
 output_base <- "mirrored_phylo_comparison"
 

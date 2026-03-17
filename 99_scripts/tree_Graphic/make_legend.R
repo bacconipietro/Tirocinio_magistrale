@@ -27,7 +27,7 @@ family_palette <- c(
   "Rivetinidae"      = "#008080",
   "Thespidae"        = "#B8860B",
   "Toxoderidae"      = "#4682B4",
-  "Outgroups"        = "#708090",
+  "Outgroups"        = "#708090"
 )
 
 # Set up the PNG canvas (adjust width/height if you need it wider or taller)

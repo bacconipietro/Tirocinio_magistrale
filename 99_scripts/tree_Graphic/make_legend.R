@@ -27,16 +27,11 @@ family_palette <- c(
   "Rivetinidae"      = "#008080",
   "Thespidae"        = "#B8860B",
   "Toxoderidae"      = "#4682B4",
-  "Termitoidae"      = "#708090",
-  "Blaberidae"       = "#708090",
-  "Ectobiidae"       = "#708090",
-  "Blattidae"        = "#708090",
-  "Corydiidae"       = "#708090",
-  "Cryptocercidae"   = "#708090"
+  "Outgroups"        = "#708090",
 )
 
 # Set up the PNG canvas (adjust width/height if you need it wider or taller)
-png(output_filename, width = 1500, height = 2400, res = 300)
+png(output_filename, width = 1500, height = 2000, res = 300)
 
 # Create a completely blank canvas with no margins
 par(mar = c(0, 0, 0, 0))

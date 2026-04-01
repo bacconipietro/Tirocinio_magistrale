@@ -27,13 +27,13 @@ python3 /home/.../partitions.py nu_genaf_partitions.txt
 
 # iqtree3 11-03-2026
 
-###Model Selection
-```
+### Model Selection
+```bash
 conda activate iqtree
 iqtree3 -s <CONCAT_FASTA> -p <PARTITIONS_NEX> -m MFP -T AUTO -pre <OUTPUT> -B 1000 --sampling GENE
 ```
 
-###Run iqtree with partitions models 12-03-2026
-```
+### Run iqtree with partitions models 12-03-2026
+```bash
 iqtree3 -s <CONCAT_FASTA> -p <PARTITIONS.best_model.nex> -T AUTO -pre <OUTPUT> -B 1000 --sampling GENE
 ```

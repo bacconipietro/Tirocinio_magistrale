@@ -1,5 +1,0 @@
-Tree number	size	Clan 1	Clan 2	Clan 3	Clan 4	Clan 5	Clan 6	Clan 7	Clan 8	Clan 9	Clan 10	Clan 11	Clan 12	Clan 13	Clan 14	Clan 15	Clan 16	Clan 17	Clan 18	Clan 19	Clan 20	Clan 21	Clan 22	Clan 23	Clan 24	Clan 25	boot_average	boot_max	boot_min	boot_stdev
-Tree 1	189	1	0	1	?	?	?	?	?	0	?	1	0	?	0	0	0	1	1	1	1	0	1	1	?	0	0.000000	0.000000	0.000000	0.000000
-Tree 2	189	1	0	1	?	?	?	?	?	0	?	1	0	?	0	0	0	1	1	1	1	0	1	1	?	0	0.000000	0.000000	0.000000	0.000000
-Tree 3	189	1	0	1	?	?	?	?	?	0	?	1	0	?	0	0	0	1	1	1	1	0	1	1	?	0	0.000000	0.000000	0.000000	0.000000
-Tree 4	189	1	0	1	?	?	?	?	?	0	?	1	0	?	1	0	0	1	1	1	1	0	0	1	?	0	0.000000	0.000000	0.000000	0.000000

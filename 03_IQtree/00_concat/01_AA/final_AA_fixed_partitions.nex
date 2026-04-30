@@ -1,0 +1,17 @@
+#NEXUS
+
+begin sets;
+    charset p1_ATP6 = 1-229;
+    charset p2_ATP8 = 230-291;
+    charset p3_COX1 = 292-815;
+    charset p4_COX2 = 816-1050;
+    charset p5_COX3 = 1051-1335;
+    charset p6_CYTB = 1336-1725;
+    charset p7_ND1 = 1726-2055;
+    charset p8_ND2 = 2056-2413;
+    charset p9_ND3 = 2414-2533;
+    charset p10_ND4 = 2534-2996;
+    charset p11_ND4L = 2997-3094;
+    charset p12_ND5 = 3095-3731;
+    charset p13_ND6 = 3732-3939;
+end;

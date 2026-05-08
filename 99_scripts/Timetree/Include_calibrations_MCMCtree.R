@@ -1,3 +1,4 @@
+.libPaths("~/R/libs")  
 #-------------------#
 # CLEAN ENVIRONMENT #
 #-------------------#
@@ -12,7 +13,7 @@ rm( list = ls( ) )
 # You can uncomment the following line to do this:
 #install.packages( "rstudioapi" )
 # REPLACE with this:
-wd <- "/home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/99_scripts/Timetree"
+wd <- "/DATABIG/pietrobacconi/ncbi_datasets/refseq_mitogenomes/05_MCMCtree/00_nucleotide/Nu123/00_inp_data/tree_file"
 setwd( wd )
 
 #-------------------------------------------------------------#
@@ -21,7 +22,7 @@ setwd( wd )
 # Name that you want the output calibrated tree file to have.
 # E.g. the file name will have the following format
 # "<out_name>_calib_MCMCtree.tree".
-out_name <- c( "calib_tree" )
+out_name <- c( "nu123" )
 num_dat  <- length( out_name )
 
 # Path to your input text file that allows you to match the flags you have 
@@ -63,7 +64,7 @@ calibrations <- keep_indexes <- ind_dup <- nodes_dup <- tt_all <-
   vector( mode = "list", num_dat )
 calibrations[[ 1 ]] <- calibrations_all
 names( calibrations ) <- names( keep_indexes )  <- names( ind_dup ) <- 
-  names( nodes_dup ) <- names( tt_all ) <- c( "mtcdnapri" )
+  names( nodes_dup ) <- names( tt_all ) <- c( "nu123" )
 
 # Path to tree
 path_tree <- c( "nu123_tree.nwk" )
@@ -112,10 +113,10 @@ for( c in 1:length( calibrations ) ){
   tt_all[[c]]$node.label[ind_na] <- ""
   # Write PHYLIP header, then the calibrated tree
   writeLines( text = paste( length(tt_all[[c]]$tip.label ), " 1", sep = "" ), 
-              con = paste( "../raw_calibs/cals_only_",
+              con = paste( "cals_only_",
               names( calibrations )[c], ".tree", sep = "" ) )
   ape::write.tree( phy = tt_all[[c]],
-                   file = paste( "../raw_calibs/cals_only_",
+                   file = paste( "cals_only_",
                    names( calibrations )[c], ".tree", sep = "" ),
                    append = TRUE )
 }
@@ -136,7 +137,7 @@ tt_all[[1]]$node.label[c(1,2,4)]
 # NOTE: Make always sure that there is at least one blank line at the 
 # end of the tree file! Otherwise, you will get an error telling you that 
 # there is an incomplete final line in these files.
-tt_name <- c( "../raw_calibs/cals_only_mtcdnapri.tree" )
+tt_name <- c( "cals_only_nu123.tree" )
 for( t in 1:length( tt_name ) ){
   
   #-------------------#
@@ -202,9 +203,9 @@ for( t in 1:length( tt_name ) ){
   #-------------------------------#
   # WRITE CALIBRATED TREE IN FILE #
   #-------------------------------#
-  out_dir <- "../../tree_display/"
-  if( ! dir.exists( "../../tree_display/" ) ){
-    dir.create( "../../tree_display/" )
+  out_dir <- "tree_display/"
+  if( ! dir.exists( "tree_display/" ) ){
+    dir.create( "tree_display/" )
   }
   # Check if `out_name` != `names(calibrations)[t]`
   if( out_name == names( calibrations )[t] ){

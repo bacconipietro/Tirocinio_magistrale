@@ -11,13 +11,8 @@ rm( list = ls( ) )
 # If you have not installed this package, you will need to install it. 
 # You can uncomment the following line to do this:
 #install.packages( "rstudioapi" )
-library( rstudioapi ) 
-# Get the path of current open file
-path_to_file <- getActiveDocumentContext()$path 
-# Get working directory path
-wd      <- paste( dirname( path_to_file ), "/", sep = "" )
-wd.name <- dirname( path_to_file )
-# Set working directory
+# REPLACE with this:
+wd <- "/home/STUDENTI/pietro.bacconi/Tirocinio_magistrale/99_scripts/Timetree"
 setwd( wd )
 
 #-------------------------------------------------------------#
@@ -26,7 +21,7 @@ setwd( wd )
 # Name that you want the output calibrated tree file to have.
 # E.g. the file name will have the following format
 # "<out_name>_calib_MCMCtree.tree".
-out_name <- c( "mtcdnapri" )
+out_name <- c( "calib_tree" )
 num_dat  <- length( out_name )
 
 # Path to your input text file that allows you to match the flags you have 
@@ -58,7 +53,7 @@ num_dat  <- length( out_name )
 # there is an incomplete final line in these files. This file needs to be
 # already in PHYLIP format. Please follow the same format as used in the 
 # example tree file provided.
-path_textconv <- c( "../raw_calibs/calibrations.txt" )
+path_textconv <- c( "calibrations.txt" )
 calibrations_all <- read.table( file = path_textconv,
                                 stringsAsFactors = FALSE, sep = ";",
                                 blank.lines.skip = TRUE, header = TRUE,
@@ -71,7 +66,7 @@ names( calibrations ) <- names( keep_indexes )  <- names( ind_dup ) <-
   names( nodes_dup ) <- names( tt_all ) <- c( "mtcdnapri" )
 
 # Path to tree
-path_tree <- c( "../../mtCDNApri.trees" )
+path_tree <- c( "nu123_tree.nwk" )
 for( c in 1:length( calibrations ) ){
   cat( "\n[[ ANALYSING CALIBRATION FILE ", names(calibrations)[c], " ]]\n" )
   tt_ape <- ape::read.tree( file = path_tree[c] )

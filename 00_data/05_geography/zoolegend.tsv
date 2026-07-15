@@ -1,17 +1,17 @@
-Region	Number
-R.Nearctic	1
-R.Neotropical	2
-subR.CentralAmerican	3
-R.Andean	4
-R.Palearctic	5
-subR.Sino-Himalayan	6
-R.Afrotropical	7
-subR.Sahero-Arabian	8
-subR.Congolian	9
-R.Madagascan	10
-R.Indo-Malaysian	11
-R.Wallacean	12
-R.NewGuinean	13
-R.Australian	14
-R.Polynesian	15
-subR.NewZealand	16
+Region	Number	Letter
+R.Nearctic	1	A
+R.Neotropical	2	B
+subR.CentralAmerican	3	C
+R.Andean	4	D
+R.Palearctic	5	E
+subR.Sino-Himalayan	6	F
+R.Afrotropical	7	G
+subR.Sahero-Arabian	8	H
+subR.Congolian	9	I
+R.Madagascan	10	J
+R.Indo-Malaysian	11	K
+R.Wallacean	12	L
+R.NewGuinean	13	M
+R.Australian	14	N
+R.Polynesian	15	O
+subR.NewZealand	16	P

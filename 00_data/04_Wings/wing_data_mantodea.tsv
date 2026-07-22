@@ -4,8 +4,8 @@ NC_086817.1	Acromantis_hesione	M	M	M	no
 NC_085562.1	Acromantis_japonica	M	M	M	no		
 NC_037203.1	Amantis_nawai	M	M	B	yes		
 NC_086818.1	Amantis_wuzhishana	M	M	B	yes		
-MG888436.1	Ambivia_parapopa	M	M	M	na		https://www.inaturalist.org/observations/208924335
-KY689128.1	Ambivia_undata	M	M	M	na		https://www.inaturalist.org/observations/208924335
+MG888436.1	Ambivia_parapopa	M	M	M	no		https://www.inaturalist.org/observations/208924335
+KY689128.1	Ambivia_undata	M	M	M	no		https://www.inaturalist.org/observations/208924335
 AA001	Ameles_andreae	B	M	B	yes		
 43assoi	Ameles_assoi	B	M	B	yes		
 ADEC02	Ameles_decolor	B	M	B	yes		
@@ -65,7 +65,7 @@ KY689130.1	Haania_sp.	B	M	B	yes	https://www.inaturalist.org/taxa/362510-Haania-v
 KX434845.1	Haania_vitalisi	B	M	B	yes	https://www.inaturalist.org/taxa/362510-Haania-vitalisi/browse_photos	https://www.inaturalist.org/observations/115677926_
 KX434859.1	Hestiasula_hoffmanni	B	M	B	yes	https://www.inaturalist.org/observations/265242474_	..
 KX091855.1	Hestiasula_sp.	M	M	M	no	https://www.inaturalist.org/observations/205546316_	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/GSMC005239_DH_M_50mm_1	2.jpg_"
-KX434823.1	Heterochaeta_sp.	M	M	B	no	https://www.inaturalist.org/observations/268890450_	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/GSMC006272_Heterochaeta_sp_F_DH_50mm_1	5.jpg"
+KX434823.1	Heterochaeta_sp.	M	M	B	yes	https://www.inaturalist.org/observations/268890450_	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/GSMC006272_Heterochaeta_sp_F_DH_50mm_1	5.jpg"
 NC_065745.1	Hierodula_chinensis	M	M	M	no	https://www.inaturalist.org/observations/268197791_	https://www.inaturalist.org/observations/187791433_
 NC_029326.1	Hierodula_formosana	M	M	M	no	https://www.inaturalist.org/observations/225062702_	https://www.inaturalist.org/observations/15444278_
 NC_086819.1	Hierodula_latipennis	M	M	M	no	https://www.inaturalist.org/observations/195808836_	https://www.inaturalist.org/observations/282875141_
@@ -125,7 +125,7 @@ KX434821.1	Plistospilota_sp.	M	M	M	no	https://www.inaturalist.org/taxa/196830-Pl
 KX434851.1	Pnigomantis_medioconstricta	M	M	M	no	https://www.inaturalist.org/observations/26311078_	https://www.inaturalist.org/observations/300321497_
 KX434863.1	Polyspilota_griffinii	M	M	M	no	https://scholar.google.com/scholar?hl=it&as_sdt=0%2C5&q=A+survey+of+the+praying+mantises+of+Rwanda%2C+including+new+records+%28Insecta%2C+Mantodea%29&btnG=_	
 KX434839.1	Popa_spurca	B	M	B	yes		"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/Popa_batesi_SF_DH_50mm_1	3.jpg_"
-KX434855.1	Prohierodula_picta	B	M	B	no	https://www.inaturalist.org/observations/115088506_	https://www.inaturalist.org/observations/261532160_
+KX434855.1	Prohierodula_picta	B	M	B	yes	https://www.inaturalist.org/observations/115088506_	https://www.inaturalist.org/observations/261532160_
 KX434868.1	Prohierodula_sp.	B	M	B	yes	https://www.inaturalist.org/observations/115088506_	https://www.inaturalist.org/observations/261532160_
 PV564197.1	Pseudacanthops_lobipes	B	M	B	yes	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/Pseudacanthops_lobipes_holotype_M_DH_50mm_1	2.jpg_"	
 NC_086821.1	Pseudempusa_pinnapavonis	B	M	B	yes	https://www.inaturalist.org/observations/36124983	https://www.inaturalist.org/observations/283857922_
@@ -177,6 +177,6 @@ KY689125.1	Theopropus_elegans	M	M	M	no	"https://storage.googleapis.com/august-st
 KX434818.1	Theopropus_rubrobrunneus	M	M	M	no	https://www.inaturalist.org/observations/66961505_	https://www.inaturalist.org/observations/59201522_
 NC_086823.1	Theopropus_sinecus	M	M	M	no	https://www.inaturalist.org/observations/233690782	https://www.inaturalist.org/observations/147262807_
 OM202564.1	Theopropus_sp.	M	M	M	no	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/GSMC004569_Theopropus_sp_M_DH_100mm_1	2.jpg_"	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/USNMENT01073154_Phyllothelys_westwoodi_DH_50mm_1	2.5.jpg_"
-KX434837.1	Toxodera_hauseri	B	M	B	no	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/Toxodera_hauseri_HM_DH_50mm_1	4.jpg_"	
+KX434837.1	Toxodera_hauseri	B	M	B	yes	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/Toxodera_hauseri_HM_DH_50mm_1	4.jpg_"	
 NC_037205.1	Tropidomantis_tenera	M	M	M	no		https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/NRM-MANT0000448_Tropidomantis_tenera_dors.jpg_
 MW357303.1	Yersinia_mexicana	M	M	A	yes	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/Yersinia_mexicanus_HM_DH_100mm_1	2.jpg_"	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/USNMENT00874552_Yersinia_mexicana_F_DH_100mm_1	1.5.jpg_"

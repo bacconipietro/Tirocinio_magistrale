@@ -1,0 +1,5 @@
+                         fit     delta            w
+Equal Rates         205.4285  5.401038 6.292311e-02
+All Rates Different 200.0275  0.000000 9.367650e-01
+Loss-only           216.0427 16.015214 3.118682e-04
+Gain-only           246.0522 46.024728 9.494848e-11

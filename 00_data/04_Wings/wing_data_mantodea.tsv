@@ -32,7 +32,7 @@ PP438763.1	Astyliasula_basinigra	B	M	B	yes	"https://storage.googleapis.com/augus
 NC_086830.1	Astyliasula_major	B	M	B	yes	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/GSMC004568_DH_100mm_1	2.jpg_"	
 KX434828.1	Blepharopsis_mendica	M	M	M	no	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/GSMC005124_Blepharopsis_mendica_M_DH_50mm_1	4.jpg_"	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/GSMC005125_Blepharopsis_mendica_F_DH_50mm_1	4.jpg_"
 OZ336339.1	Bolivaria_brachyptera	B	B	B	no	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/SMNK_Bolivaria_brachyptera_M_DH_100mm_1	2.jpg_"	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/NHMW_Bolivaria_brachyptera_F_DH_100mm_1	2.jpg_"
-KX434826.1	Brunneria_borealis	B	na	B	no		"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/Brunneria_borealis_HoloF_DH_50mm_1	4.jpg_"
+KX434826.1	Brunneria_borealis	B	B	B	no		"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/Brunneria_borealis_HoloF_DH_50mm_1	4.jpg_"
 KY689126.1	Caliris_sp.	M	M	M	no	https://scholar.google.com/scholar?hl=it&as_sdt=0%2C5&q=Biodiversity+Record%3A+New+record+of+the+praying+mantis%2C+Caliris+elegans%2C+in+Singapore&btnG=_	..
 NC_077476.1	Callibia_diana	M	M	M	no	https://ento360.com/mantid/specimens/70	
 KX434812.1	Camelomantis_moultoni	B	M	B	yes	https://www.entomologiitaliani.net/public/forum/phpBB3/viewtopic.php?f=340&t=88756&view=next_	..
@@ -100,7 +100,7 @@ MG888455.1	Metallyticus_splendidus	M	M	M	no	"https://storage.googleapis.com/augu
 KX434808.1	Miomantis_caffra	B	M	B	yes	https://www.inaturalist.org/taxa/207583-Miomantis-caffra/browse_photos_	..
 OM202562.1	Miromantis_sp.	M	M	M	no	https://www.inaturalist.org/taxa/479762-Miromantis/browse_photos_	..
 KX434810.1	Miromantis_yunnanensis	M	M	M	no	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/Miromantis_mirandula_M_DH_100_1	1.jpg_"	https://www.inaturalist.org/observations/255289896_
-KX434858.1	Neodanuria_bolauana	M	M	na	na	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/Danuria_bolauana_Holotype_M_DH_50mm_1	3x_F5.jpg_"	
+KX434858.1	Neodanuria_bolauana	B	B	B	no	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/Danuria_bolauana_Holotype_M_DH_50mm_1	3x_F5.jpg_"	
 PP072307.1	Odontomantis_sp.	M	M	M	no	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/GSMC004564_DH_100mm_1	1.5.jpg_"	"https://storage.googleapis.com/august-storm-400414.appspot.com/MantID_assets/GSMC003982_DH_100mm_1	2.jpg_"
 KX434842.1	Orthodera_ministralis	M	M	M	no	https://www.inaturalist.org/observations/39342861_	https://www.inaturalist.org/observations/25056118_
 NC_086621.1	Otomantis_scutigera	M	M	M	no	https://www.inaturalist.org/taxa/680408-Otomantis-scutigera/browse_photos	..

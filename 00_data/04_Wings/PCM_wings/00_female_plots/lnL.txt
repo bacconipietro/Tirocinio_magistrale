@@ -1,0 +1,3 @@
+        Equal Rates All Rates Different           Loss-only           Gain-only 
+         -101.40718           -91.82599          -101.70471          -121.03388 
+

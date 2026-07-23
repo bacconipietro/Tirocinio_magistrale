@@ -20,7 +20,7 @@ tree <- read.tree("GBM2_clean_noOutgroup.tre")
 
 # Read the trait data. row.names = 1 tells R that the first column contains
 # species names that will be used as row identifiers.
-data <- read.csv("wings_recoded.csv", row.names = 1)
+data <- read.csv("female_wings_recoded.csv", row.names = 1)
 # Tree and data table are almost always slightly mismatched (e.g. species in
 # one but not the other). name.check() spots discrepancies and returns a list:
 #   $tree_not_data  -- tips on the tree with no trait info

@@ -1,0 +1,4 @@
+                p1          p2     value fevals gevals niter convcode  kkt1
+bobyqa 0.004285178 0.001461883 -488.5015     44     NA    NA        0 FALSE
+       kkt2  xtime
+bobyqa TRUE 25.962

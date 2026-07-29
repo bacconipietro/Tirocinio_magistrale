@@ -1,0 +1,26 @@
+> summary(influ_wings)
+$`Influential species for q12`
+[1] "NC_039940.1_Perbru" "NC_065761.1_Stafla" "KU201314.1_Thespe" 
+[4] "NC_014274.1_Eupsin" "MG888455.1_Metspl"  "KX434819.1_Hiemaj" 
+
+$q12
+     Species removed         q12        DIFq12 Change(%)
+1 NC_039940.1_Perbru 0.001563966 -0.0003355862      17.7
+2 NC_065761.1_Stafla 0.001586591 -0.0003129612      16.5
+3  KU201314.1_Thespe 0.001589359 -0.0003101935      16.3
+4 NC_014274.1_Eupsin 0.001589588 -0.0003099649      16.3
+5  MG888455.1_Metspl 0.001596125 -0.0003034276      16.0
+6  KX434819.1_Hiemaj 0.001604563 -0.0002949894      15.5
+
+$`Influential species for q21`
+[1] "NC_039940.1_Perbru" "NC_065761.1_Stafla" "KU201314.1_Thespe" 
+[4] "NC_014274.1_Eupsin" "MG888455.1_Metspl"  "KX434819.1_Hiemaj" 
+
+$q21
+     Species removed         q21        DIFq21 Change(%)
+1 NC_039940.1_Perbru 0.001563966 -0.0003355862      17.7
+2 NC_065761.1_Stafla 0.001586591 -0.0003129612      16.5
+3  KU201314.1_Thespe 0.001589359 -0.0003101935      16.3
+4 NC_014274.1_Eupsin 0.001589588 -0.0003099649      16.3
+5  MG888455.1_Metspl 0.001596125 -0.0003034276      16.0
+6  KX434819.1_Hiemaj 0.001604563 -0.0002949894      15.5

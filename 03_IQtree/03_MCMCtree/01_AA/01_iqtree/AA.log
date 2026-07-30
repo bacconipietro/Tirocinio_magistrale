@@ -1,0 +1,357 @@
+IQ-TREE version 3.1.1 for Linux x86 64-bit built Apr  8 2026
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    SGBGA-D142152S (AVX2, FMA3, 251 GB RAM)
+Command: iqtree3 -s 00_inp_data/final_AA_fixed_concat.fasta -p 00_inp_data/mantids_fixed_AA.best_scheme.nex -te 00_inp_data/tree_file/tree_display/AA_calib_MCMCtree.tree --dating mcmctree -T 4 --prefix AA
+Seed:    753340 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue May 26 10:06:50 2026
+Kernel:  AVX+FMA - 4 threads (32 CPU cores detected)
+
+Reading partition model file 00_inp_data/mantids_fixed_AA.best_scheme.nex ...
+Reading alignment file 00_inp_data/final_AA_fixed_concat.fasta ... Fasta format detected
+Reading fasta file: done in 0.0194979 secs using 93.72% CPU
+Alignment most likely contains protein sequences
+Constructing alignment: done in 0.0174325 secs using 99.11% CPU
+WARNING: 29 sites contain only gaps or ambiguous characters.
+Alignment has 189 sequences with 3939 columns, 3113 distinct patterns
+2553 parsimony-informative, 311 singleton sites, 1075 constant sites
+                      Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 0.00133571 secs using 320.1% CPU
+   1  16CI1f_Psebet           7.74%    passed     99.98%
+   2  23spal_Amespa2         11.04%    passed     99.38%
+   3  41K26_Amepic            9.09%    passed     99.60%
+   4  43assoi_Ameass          9.04%    passed     99.70%
+   5  59T3_Amedum            16.02%    passed     35.86%
+   6  AA001_Ameand            8.83%    passed     98.90%
+   7  AA003_Ameser            8.30%    passed     98.51%
+   8  AA005_Amespa            8.48%    passed     98.46%
+   9  AAP07_Aptapt            7.62%    passed     99.92%
+  10  ADEC02_Amedec           7.79%    passed     99.38%
+  11  KU201314.1_Thespe       8.02%    passed      6.40%
+  12  KU201316.1_Staspe       8.38%    passed     99.96%
+  13  KX091850.1_Cersau       8.33%    passed     92.34%
+  14  KX091851.1_Creelo       8.12%    passed     99.98%
+  15  KX091854.1_Spiocc2      8.17%    passed     92.64%
+  16  KX091855.1_Hesspe       8.25%    passed     90.74%
+  17  KX091863.1_Physha       8.20%    passed     74.55%
+  18  KX091864.1_Rholat       8.20%    passed    100.00%
+  19  KX434808.1_Miocaf       8.07%    passed     98.92%
+  20  KX434810.1_Miryun       8.02%    passed     42.73%
+  21  KX434811.1_Psewah       8.17%    passed     99.97%
+  22  KX434812.1_Cammou       8.28%    passed     99.13%
+  23  KX434813.1_Mesala2      8.12%    passed    100.00%
+  24  KX434815.1_Gongon       8.61%    passed     91.90%
+  25  KX434816.1_Spiocc       8.15%    passed     94.76%
+  26  KX434817.1_Tausig       8.17%    passed     98.43%
+  27  KX434818.1_Therub       8.43%    passed     99.99%
+  28  KX434819.1_Hiemaj       8.20%    passed    100.00%
+  29  KX434820.1_Iripol      16.70%    passed     92.54%
+  30  KX434821.1_Plispe       8.40%    passed    100.00%
+  31  KX434823.1_Hetspe       8.20%    passed     99.39%
+  32  KX434824.1_Idolat       8.20%    passed     99.62%
+  33  KX434825.1_Emppen       8.12%    passed    100.00%
+  34  KX434826.1_Brubor       8.50%    passed     99.87%
+  35  KX434828.1_Blemen       8.33%    passed     99.89%
+  36  KX434829.1_Thecat       8.17%    passed     99.95%
+  37  KX434830.1_Hiemul       8.12%    passed     99.71%
+  38  KX434834.1_Derdes       7.92%    passed     76.29%
+  39  KX434837.1_Toxhau       8.15%    passed     99.99%
+  40  KX434838.1_Psechl       8.40%    passed     99.94%
+  41  KX434839.1_Popspu       8.35%    passed     99.97%
+  42  KX434840.1_Sphvir       8.17%    passed     99.77%
+  43  KX434841.1_Psespe       7.97%    passed    100.00%
+  44  KX434842.1_Ortmin       8.12%    passed     99.96%
+  45  KX434843.1_Acomul       8.05%    passed     86.36%
+  46  KX434844.1_Decspe       8.23%    failed      1.06%
+  47  KX434845.1_Haavit      14.09%    failed      0.07%
+  48  KX434846.1_Amochi       8.02%    passed     39.32%
+  49  KX434847.1_Psepin2      8.23%    passed     89.75%
+  50  KX434849.1_Themil       8.23%    passed     87.82%
+  51  KX434850.1_Derlob       8.10%    passed     81.67%
+  52  KX434851.1_Pnimed       8.23%    passed     99.95%
+  53  KX434855.1_Propic       8.02%    passed    100.00%
+  54  KX434856.1_Otospe      16.73%    passed     95.13%
+  55  KX434857.1_Humnad2      8.15%    passed     11.38%
+  56  KX434858.1_Neobol       8.43%    passed     92.07%
+  57  KX434859.1_Heshof       8.20%    passed     97.07%
+  58  KX434860.1_Singra       8.10%    passed      8.38%
+  59  KX434861.1_Hymcor       8.20%    passed    100.00%
+  60  KX434862.1_Tarala       8.07%    passed     98.05%
+  61  KX434863.1_Polgri      16.65%    passed     79.04%
+  62  KX434864.1_Idodia       8.12%    passed     56.78%
+  63  KX434867.1_Creapi       8.10%    passed    100.00%
+  64  KX434868.1_Prospe       8.00%    passed    100.00%
+  65  KX434870.1_Pardav       8.25%    passed    100.00%
+  66  KX434871.1_Metspe       7.97%    passed     76.48%
+  67  KX619654.1_Rhospe       8.17%    passed    100.00%
+  68  KY689113.1_Derdes2      8.12%    passed     85.68%
+  69  KY689117.1_Parkuh       8.10%    passed     66.51%
+  70  KY689118.1_Stepor       9.77%    passed     99.69%
+  71  KY689119.1_Physpe       8.17%    passed     89.49%
+  72  KY689125.1_Theele       8.40%    passed     97.19%
+  73  KY689126.1_Calspe       8.02%    passed     90.59%
+  74  KY689128.1_Ambund       8.23%    passed     99.99%
+  75  KY689130.1_Haaspe      11.50%    failed      0.03%
+  76  KY689136.1_Hiedul       8.35%    passed    100.00%
+  77  MG888436.1_Ambpar       8.23%    passed    100.00%
+  78  MG888437.1_Amospe       8.25%    passed     36.75%
+  79  MG888449.1_Hymcor       8.23%    passed     99.96%
+  80  MG888453.1_Leplac       8.23%    passed     99.78%
+  81  MG888455.1_Metspl       8.12%    passed     95.43%
+  82  MG888456.1_Parkuhasi    8.17%    passed     66.24%
+  83  MG888457.1_Pargig       8.05%    passed     99.75%
+  84  MG888464.1_Singua       8.12%    passed      7.38%
+  85  MK400676.1_Erespe       8.38%    failed      0.45%
+  86  MN267041.1_Mekqui       8.94%    passed     96.76%
+  87  MT024239.1_Phybre2      8.38%    passed     98.94%
+  88  MW222469.1_Crespe       8.17%    passed    100.00%
+  89  MW357297.1_Asiyun       8.35%    passed    100.00%
+  90  MW357298.1_Hiespe2      8.30%    passed    100.00%
+  91  MW357300.1_Mesala       8.12%    passed    100.00%
+  92  MW357301.1_Pseper       8.25%    passed     99.93%
+  93  MW357302.1_Stabio       8.15%    passed     99.97%
+  94  MW357303.1_Yermex       8.12%    passed     90.54%
+  95  NC_007702.1_Tamtam      8.28%    passed    100.00%
+  96  NC_009499.1_Retsan      8.12%    failed      0.00%
+  97  NC_012901.1_Blager      8.28%    passed     67.20%
+  98  NC_014274.1_Eupsin      8.53%    passed      6.61%
+  99  NC_015800.1_Copfor      8.10%    failed      0.00%
+ 100  NC_018120.1_Masdar      7.97%    failed      0.00%
+ 101  NC_024028.1_Lepalb      9.01%    passed     95.38%
+ 102  NC_029326.1_Hiefor      8.28%    passed    100.00%
+ 103  NC_030264.1_Humnad      8.17%    failed      3.57%
+ 104  NC_030265.1_Manrel      8.07%    passed     99.98%
+ 105  NC_030266.1_Tensin      8.25%    passed    100.00%
+ 106  NC_030267.1_Cregem      8.20%    passed     99.77%
+ 107  NC_030268.1_Anazhe      8.12%    passed     86.74%
+ 108  NC_034282.1_Rhobra      8.23%    passed     99.98%
+ 109  NC_034283.1_Hiepat      8.20%    passed     99.93%
+ 110  NC_034284.1_Rhoval      8.28%    passed    100.00%
+ 111  NC_037203.1_Amanaw      8.48%    passed     98.99%
+ 112  NC_037204.1_Sphlin      8.43%    passed     98.17%
+ 113  NC_037205.1_Troten      8.10%    passed     92.04%
+ 114  NC_037206.1_Scesim      8.33%    passed     70.29%
+ 115  NC_037207.1_Schbic      8.20%    passed     96.83%
+ 116  NC_037208.1_Eomyun      8.28%    passed     71.69%
+ 117  NC_037234.1_Crejia      8.33%    passed     99.97%
+ 118  NC_037235.1_Sibpre      8.10%    passed     99.99%
+ 119  NC_037496.1_Crymer      8.05%    failed      0.00%
+ 120  NC_037697.1_Parpol      7.87%    passed     98.85%
+ 121  NC_039940.1_Perbru      8.10%    failed      0.96%
+ 122  NC_045876.1_Psybor      8.28%    passed     99.99%
+ 123  NC_048984.1_Hiemem      8.28%    passed     99.25%
+ 124  NC_051489.1_Rholon      8.28%    passed    100.00%
+ 125  NC_051490.1_Plibim      8.02%    passed     45.94%
+ 126  NC_051892.1_Arrpal      8.02%    passed     13.61%
+ 127  NC_057070.1_Amohai      8.15%    passed     46.99%
+ 128  NC_063851.1_Sinden      8.20%    passed     31.05%
+ 129  NC_065745.1_Hiechi      8.33%    passed    100.00%
+ 130  NC_065746.1_Hiezha      8.23%    passed    100.00%
+ 131  NC_065758.1_Hiemac      8.12%    passed     99.98%
+ 132  NC_065759.1_Tenang      8.23%    passed     99.99%
+ 133  NC_065760.1_Stamac      8.30%    passed     99.98%
+ 134  NC_065761.1_Stafla      8.35%    passed     99.96%
+ 135  NC_066978.1_Paragr      8.15%    passed     99.90%
+ 136  NC_069808.1_Cilhum      8.12%    passed     91.77%
+ 137  NC_069809.1_Citfal      8.33%    passed    100.00%
+ 138  NC_069810.1_Dertru      8.56%    passed     90.43%
+ 139  NC_069811.1_Pacbic      8.38%    passed     36.36%
+ 140  NC_077476.1_Caldia      8.23%    passed     99.96%
+ 141  NC_077477.1_Rapfus      8.28%    passed     52.54%
+ 142  NC_077478.1_Galamo      8.20%    passed    100.00%
+ 143  NC_077479.1_Chestr      8.00%    passed    100.00%
+ 144  NC_082459.1_Dippun      8.25%    failed      2.96%
+ 145  NC_085562.1_Acrjap      8.20%    passed    100.00%
+ 146  NC_086621.1_Otoscu      8.20%    passed     99.97%
+ 147  NC_086622.1_Phybre      8.58%    passed     98.49%
+ 148  NC_086795.1_Phypar      8.38%    passed     99.88%
+ 149  NC_086817.1_Acrhes      8.10%    passed    100.00%
+ 150  NC_086818.1_Amawuz      8.25%    passed     91.84%
+ 151  NC_086819.1_Hielat      8.25%    passed    100.00%
+ 152  NC_086820.1_Staagr      8.25%    passed    100.00%
+ 153  NC_086821.1_Psepin      8.12%    passed     95.16%
+ 154  NC_086822.1_Anasin      8.20%    passed     99.99%
+ 155  NC_086823.1_Thesin      8.23%    passed     94.20%
+ 156  NC_086824.1_Physin      8.15%    passed     89.21%
+ 157  NC_086825.1_Phywer      8.28%    passed     99.92%
+ 158  NC_086826.1_Anatia      8.12%    passed     99.89%
+ 159  NC_086827.1_Theoph      8.17%    passed     89.66%
+ 160  NC_086828.1_Arrbre      8.17%    passed      5.97%
+ 161  NC_086829.1_Arrpur      8.25%    passed     52.83%
+ 162  NC_086830.1_Astmaj      8.25%    passed     97.26%
+ 163  NC_086831.1_Gonbru      8.00%    passed     63.47%
+ 164  NC_086832.1_Themac      8.20%    passed     97.60%
+ 165  OK480879.1_Lepton       8.30%    passed     95.66%
+ 166  OK542392.1_Hielon       8.25%    passed    100.00%
+ 167  OK542393.1_Tenaribre    8.17%    passed    100.00%
+ 168  OL414957.1_Staspe2      8.38%    passed     99.38%
+ 169  OL414959.1_Hiespe       8.28%    passed    100.00%
+ 170  OM177664.1_Gonspe       8.00%    passed     97.29%
+ 171  OM202552.1_Tenspe       8.30%    passed     99.99%
+ 172  OM202554.1_Anaspe       8.20%    passed     99.99%
+ 173  OM202555.1_Anagra       8.12%    passed     99.96%
+ 174  OM202561.1_Sinspe       8.35%    passed     48.80%
+ 175  OM202562.1_Mirspe       7.79%    passed     55.54%
+ 176  OM202563.1_Arrpal2      8.20%    failed      0.72%
+ 177  OM202564.1_Thespe       8.05%    passed     99.76%
+ 178  OM202571.1_Lepspe       7.79%    passed     26.75%
+ 179  OM910846.1_Carspe       7.79%    passed     11.12%
+ 180  OZ336339.1_Bolbra       8.89%    passed     90.25%
+ 181  PP072306.1_Majmou       8.40%    passed     99.99%
+ 182  PP072307.1_Odospe       8.10%    passed     82.78%
+ 183  PP438763.1_Astbas       9.29%    passed     98.11%
+ 184  PP438765.1_Cermac       9.39%    passed     97.42%
+ 185  PP438766.1_Ceryun       8.86%    passed     86.93%
+ 186  PP438767.1_Chlles       8.81%    passed     25.05%
+ 187  PP438770.1_Panfra       8.81%    passed     99.84%
+ 188  PV564197.1_Pselob       8.20%    passed      7.36%
+ 189  RBE05_Rivbae           13.84%    passed     93.89%
+****  TOTAL                   8.52%  12 sequences failed composition chi2 test (p-value<5%; df=19)
+
+Loading 9 partitions...
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1	AA	189	229	145	55	MTMET+R6	p1_ATP6
+2	AA	189	62	41	15	MTMAM+F+R5	p2_ATP8
+3	AA	189	1199	580	520	MTVER+I+R7	p3_COX1_p5_COX3_p6_CYTB
+4	AA	189	235	155	61	Q.MAMMAL+F+I+R6	p4_COX2
+5	AA	189	793	603	150	Q.BIRD+F+I+R7	p7_ND1_p10_ND4
+6	AA	189	478	353	86	MTVER+F+R7	p8_ND2_p9_ND3
+7	AA	189	98	70	15	MTINV+G4	p11_ND4L
+8	AA	189	637	462	132	Q.BIRD+F+I+R7	p12_ND5
+9	AA	189	208	144	41	MTVER+F+R6	p13_ND6
+Degree of missing data: 0.000
+Info: multi-threading strategy over partitions
+NOTE: MW357300.1_Mesala is identical to KX434813.1_Mesala2 but kept for subsequent analysis
+Reading input tree file 00_inp_data/tree_file/tree_display/AA_calib_MCMCtree.tree ... rooted tree
+
+NOTE: 662 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -292190.061
+Current log-likelihood at step 1: -288137.870
+Current log-likelihood at step 2: -288020.148
+Current log-likelihood at step 3: -288004.209
+Current log-likelihood at step 4: -287988.583
+Current log-likelihood at step 5: -287969.617
+Current log-likelihood at step 6: -287966.370
+Current log-likelihood at step 7: -287963.763
+Current log-likelihood at step 8: -287961.873
+Current log-likelihood at step 9: -287960.553
+Current log-likelihood at step 10: -287959.550
+Current log-likelihood at step 11: -287958.695
+Current log-likelihood at step 12: -287957.944
+Current log-likelihood at step 13: -287957.261
+Current log-likelihood at step 14: -287956.646
+Current log-likelihood at step 15: -287956.082
+Current log-likelihood at step 16: -287955.566
+Current log-likelihood at step 17: -287955.085
+Current log-likelihood at step 18: -287954.639
+Current log-likelihood at step 19: -287954.235
+Current log-likelihood at step 20: -287953.870
+Current log-likelihood at step 21: -287953.531
+Current log-likelihood at step 22: -287953.220
+Current log-likelihood at step 23: -287952.935
+Current log-likelihood at step 24: -287952.666
+Current log-likelihood at step 25: -287952.419
+Current log-likelihood at step 26: -287952.181
+Current log-likelihood at step 27: -287951.957
+Current log-likelihood at step 28: -287951.745
+Current log-likelihood at step 29: -287951.555
+Current log-likelihood at step 30: -287951.372
+Current log-likelihood at step 31: -287951.201
+Current log-likelihood at step 32: -287951.047
+Current log-likelihood at step 33: -287950.890
+Current log-likelihood at step 34: -287950.752
+Current log-likelihood at step 35: -287950.620
+Current log-likelihood at step 36: -287950.484
+Current log-likelihood at step 37: -287950.357
+Current log-likelihood at step 38: -287950.233
+Current log-likelihood at step 39: -287950.125
+Current log-likelihood at step 40: -287950.019
+Current log-likelihood at step 41: -287949.914
+Current log-likelihood at step 42: -287949.823
+Current log-likelihood at step 43: -287949.732
+Current log-likelihood at step 44: -287949.637
+Current log-likelihood at step 45: -287949.547
+Current log-likelihood at step 46: -287949.466
+Current log-likelihood at step 47: -287949.381
+Current log-likelihood at step 48: -287949.304
+Current log-likelihood at step 49: -287949.221
+Current log-likelihood at step 50: -287949.145
+Current log-likelihood at step 51: -287949.071
+Current log-likelihood at step 52: -287949.006
+Current log-likelihood at step 53: -287948.933
+Current log-likelihood at step 54: -287948.864
+Current log-likelihood at step 55: -287948.804
+Current log-likelihood at step 56: -287948.742
+Current log-likelihood at step 57: -287948.691
+Current log-likelihood at step 58: -287948.630
+Current log-likelihood at step 59: -287948.572
+Current log-likelihood at step 60: -287948.523
+Current log-likelihood at step 61: -287948.464
+Current log-likelihood at step 62: -287948.407
+Current log-likelihood at step 63: -287948.361
+Current log-likelihood at step 64: -287948.307
+Current log-likelihood at step 65: -287948.253
+Current log-likelihood at step 66: -287948.201
+Current log-likelihood at step 67: -287948.160
+Current log-likelihood at step 68: -287948.110
+Current log-likelihood at step 69: -287948.065
+Current log-likelihood at step 70: -287948.023
+Current log-likelihood at step 71: -287947.977
+Current log-likelihood at step 72: -287947.928
+Current log-likelihood at step 73: -287947.887
+Current log-likelihood at step 74: -287947.839
+Current log-likelihood at step 75: -287947.806
+Current log-likelihood at step 76: -287947.764
+Current log-likelihood at step 77: -287947.718
+Current log-likelihood at step 78: -287947.680
+Current log-likelihood at step 79: -287947.641
+Current log-likelihood at step 80: -287947.609
+Current log-likelihood at step 81: -287947.569
+Current log-likelihood at step 82: -287947.533
+Current log-likelihood at step 83: -287947.494
+Current log-likelihood at step 84: -287947.463
+Current log-likelihood at step 85: -287947.426
+Current log-likelihood at step 86: -287947.392
+Current log-likelihood at step 87: -287947.364
+Current log-likelihood at step 88: -287947.326
+Current log-likelihood at step 89: -287947.302
+Current log-likelihood at step 90: -287947.270
+Current log-likelihood at step 91: -287947.239
+Current log-likelihood at step 92: -287947.207
+Current log-likelihood at step 93: -287947.175
+Current log-likelihood at step 94: -287947.150
+Current log-likelihood at step 95: -287947.122
+Current log-likelihood at step 96: -287947.091
+Current log-likelihood at step 97: -287947.068
+Current log-likelihood at step 98: -287947.045
+Current log-likelihood at step 99: -287947.014
+Partition-specific rates:  0.614 2.423 0.576 0.568 1.145 1.245 0.785 1.385 1.744
+Parameters optimization took 99 rounds (2117.698 sec)
+
+Wrote distance file to... 
+Partition information was printed to AA.best_model.nex
+BEST SCORE FOUND : -287947.014
+Total tree length: 24.671
+
+Total number of iterations: 0
+CPU time used for tree search: 0.000 sec (0h:0m:0s)
+Wall-clock time used for tree search: 0.000 sec (0h:0m:0s)
+Total CPU time used: 6940.194 sec (1h:55m:40s)
+Total wall-clock time used: 2118.349 sec (0h:35m:18s)
+
+--- Generating the gradients and the Hessian for MCMCTree ---
+--- Completed the gradients and the Hessian generation ---
+
+Gradients and Hessians written to: AA.mcmctree.hessian
+Ctl file for MCMCTree written to: AA.mcmctree.ctl
+
+
+Analysis results written to: 
+  IQ-TREE report:                AA.iqtree
+  Maximum-likelihood tree:       AA.treefile
+  Screen log file:               AA.log
+
+Date and Time: Tue May 26 10:42:17 2026

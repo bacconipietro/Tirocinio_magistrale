@@ -107,7 +107,7 @@ done
 
 #### Theory:
 
-Your script is designed to run a "parameter sweep"—it tries to assemble the genome using increasing numbers of reads (50k, 100k, etc.) to find the minimum required for a good assembly.
+This script is designed to run a "parameter sweep"—it tries to assemble the genome using increasing numbers of reads (50k, 100k, etc.) to find the minimum required for a good assembly.
 It's data-driven: The assembler (MitoZ) looks for an overlap between the start and end of the sequence. If the coverage drops at the ends or the sequence is repetitive, it cannot confidently join them, so it outputs a linear sequence.
 The Annotation consequence: Because the output file is technically linear, the Annotation step (which gives you the warning) treats it as a straight line. This is why your tRNAs are missing. If a gene sits exactly across the "break" point of the circle, the linear annotator cannot see it.
 

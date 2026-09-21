@@ -85,7 +85,7 @@ plot_BioGeoBEARS_results(DEC.fit,
                           splitcex=0.65,
                           pie_tip_statecex=0.6,
                           root.edge=FALSE,        # <- remove unrelevant root data
-                          plot_max_age=85)        # <- maxe range for x axis in Ma
+                          plot_max_age=125)        # <- maxe range for x axis in Ma
 ## --- reconstruction legend input ---
 tipranges <- getranges_from_LagrangePHYLIP(lgdata_fn = DEC.fit$inputs$geogfn)
 areas <- getareas_from_tipranges_object(tipranges)

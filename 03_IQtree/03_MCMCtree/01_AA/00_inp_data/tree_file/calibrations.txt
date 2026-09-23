@@ -1,4 +1,0 @@
-name;tip1;tip2;MCMCtree
-root;NC_009499.1_Retsan;MG888455.1_Metspl;'B(315,450)'
-cMantodea;MG888455.1_Metspl;MK400676.1_Erespe;'U(66)'
-cMantidae;MW357297.1_Asiyun;KX434862.1_Tarala;'B(33.9,66)'

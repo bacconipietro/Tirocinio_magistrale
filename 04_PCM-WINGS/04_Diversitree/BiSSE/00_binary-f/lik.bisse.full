@@ -1,0 +1,17 @@
+BiSSE likelihood function:
+  * Parameter vector takes 6 elements:
+     - lambda0, lambda1, mu0, mu1, q01, q10
+  * Function takes arguments (with defaults)
+     - pars: Parameter vector
+     - condition.surv [TRUE]: Condition likelihood on survial?
+     - root [ROOT.OBS]: Type of root treatment
+     - root.p [NULL]: Vector of root state probabilities
+     - intermediates [FALSE]: Also return intermediate values?
+  * Phylogeny with 189 tips and 188 nodes
+     - Taxa: 16CI1f_Psebet, 23spal_Amespa2, AA005_Amespa, ...
+  * References:
+     - Maddison et al. (2007) doi:10.1080/10635150701607033
+     - FitzJohn et al. (2009) doi:10.1093/sysbio/syp067
+R definition:
+function (pars, condition.surv = TRUE, root = ROOT.OBS, root.p = NULL, 
+    intermediates = FALSE)  

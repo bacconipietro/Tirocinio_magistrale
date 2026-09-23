@@ -1,0 +1,9 @@
+300 simulations saved, see output$sensi.estimates to acess all simulations
+  % Species Removed Mean q12 Change (%) Mean sDIFq12 Median sDIFq12
+1                10               7.197 -0.160742015    -0.05081733
+2                20              11.121  0.007362801     0.04199179
+3                30              14.848 -0.202122943    -0.27788443
+  Mean q21 Change (%) Mean sDIFq21 Median sDIFq21
+1               9.320   -0.2650087     -0.2723163
+2              12.902   -0.1354418     -0.1737730
+3              18.041   -0.5164106     -0.6421001

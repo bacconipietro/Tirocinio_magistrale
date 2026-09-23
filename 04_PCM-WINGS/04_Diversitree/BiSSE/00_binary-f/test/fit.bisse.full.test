@@ -1,0 +1,45 @@
+$par
+   lambda0    lambda1        mu0        mu1        q01        q10 
+0.31006390 0.40252093 0.35235519 0.37266149 0.01331192 0.04488937 
+
+$lnLik
+[1] -586.0354
+
+$counts
+[1] 1091
+
+$convergence
+[1] 0
+
+$message
+[1] "success! tolerance satisfied"
+
+$hessian
+NULL
+
+$method
+[1] "subplex"
+
+$func.class
+[1] "bisse"    "dtlik"    "function"
+
+attr(,"func")
+BiSSE likelihood function:
+  * Parameter vector takes 6 elements:
+     - lambda0, lambda1, mu0, mu1, q01, q10
+  * Function takes arguments (with defaults)
+     - pars: Parameter vector
+     - condition.surv [TRUE]: Condition likelihood on survial?
+     - root [ROOT.OBS]: Type of root treatment
+     - root.p [NULL]: Vector of root state probabilities
+     - intermediates [FALSE]: Also return intermediate values?
+  * Phylogeny with 189 tips and 188 nodes
+     - Taxa: 16CI1f_Psebet, 23spal_Amespa2, AA005_Amespa, ...
+  * References:
+     - Maddison et al. (2007) doi:10.1080/10635150701607033
+     - FitzJohn et al. (2009) doi:10.1093/sysbio/syp067
+R definition:
+function (pars, condition.surv = TRUE, root = ROOT.OBS, root.p = NULL, 
+    intermediates = FALSE)  
+attr(,"class")
+[1] "fit.mle.bisse" "fit.mle"     

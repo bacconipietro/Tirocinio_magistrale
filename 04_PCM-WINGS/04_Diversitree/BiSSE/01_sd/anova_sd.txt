@@ -1,0 +1,3 @@
+     Df   lnLik    AIC   ChiSq Pr(>|Chi|)
+full  6 -597.70 1207.4                   
+null  4 -597.93 1203.9 0.45674     0.7958

@@ -1,0 +1,49 @@
+$par
+   lambda0        mu0        q01        q10 
+0.37696021 0.37841669 0.02835492 0.03283674 
+
+$lnLik
+[1] -588.7038
+
+$counts
+[1] 216
+
+$convergence
+[1] 0
+
+$message
+[1] "success! tolerance satisfied"
+
+$hessian
+NULL
+
+$method
+[1] "subplex"
+
+$par.full
+   lambda0    lambda1        mu0        mu1        q01        q10 
+0.37696021 0.37696021 0.37841669 0.37841669 0.02835492 0.03283674 
+
+$func.class
+[1] "constrained" "bisse"       "dtlik"       "function"   
+
+attr(,"func")
+BiSSE likelihood function:
+  * Parameter vector takes 4 elements:
+     - lambda0, mu0, q01, q10
+  * Function constrained (original took 6 elements):
+     - lambda1 ~ lambda0
+     - mu1 ~ mu0
+  * Function takes arguments (with defaults)
+     - pars: Parameter vector
+     - ...: Additional arguments to underlying function
+     - pars.only [FALSE]: Return full parameter vector?
+  * Phylogeny with 189 tips and 188 nodes
+     - Taxa: 16CI1f_Psebet, 23spal_Amespa2, AA005_Amespa, ...
+  * References:
+     - Maddison et al. (2007) doi:10.1080/10635150701607033
+     - FitzJohn et al. (2009) doi:10.1093/sysbio/syp067
+R definition:
+function (pars, ..., pars.only = FALSE)  
+attr(,"class")
+[1] "fit.mle.bisse" "fit.mle"      

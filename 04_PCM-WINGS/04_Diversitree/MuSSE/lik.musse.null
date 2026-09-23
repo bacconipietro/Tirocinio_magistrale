@@ -1,0 +1,18 @@
+MuSSE likelihood function:
+  * Parameter vector takes 8 elements:
+     - lambda1, mu1, q12, q13, q21, q23, q31, q32
+  * Function constrained (original took 12 elements):
+     - lambda2 ~ lambda1
+     - lambda3 ~ lambda1
+     - mu2 ~ mu1
+     - mu3 ~ mu1
+  * Function takes arguments (with defaults)
+     - pars: Parameter vector
+     - ...: Additional arguments to underlying function
+     - pars.only [FALSE]: Return full parameter vector?
+  * Phylogeny with 189 tips and 188 nodes
+     - Taxa: 16CI1f_Psebet, 23spal_Amespa2, AA005_Amespa, ...
+  * Reference:
+     - FitzJohn (submitted)
+R definition:
+function (pars, ..., pars.only = FALSE)  

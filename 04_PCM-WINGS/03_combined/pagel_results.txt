@@ -1,0 +1,30 @@
+Pagel's binary character correlation test:
+
+Assumes "ARD" substitution model for both characters
+
+Independent model rate matrix:
+          1|1       1|2       2|1       2|2
+1|1 -0.047805  0.014966  0.032839  0.000000
+1|2  0.211676 -0.244515  0.000000  0.032839
+2|1  0.028355  0.000000 -0.043321  0.014966
+2|2  0.000000  0.028355  0.211676 -0.240031
+
+Dependent (x & y) model rate matrix:
+          1|1      1|2       2|1       2|2
+1|1 -0.033003  0.00000  0.033003  0.000000
+1|2  0.045422 -0.10429  0.000000  0.058868
+2|1  0.033292  0.00000 -0.100909  0.067617
+2|2  0.000000  0.00000  0.353902 -0.353902
+
+Model fit:
+            log-likelihood      AIC
+independent      -107.0797 222.1594
+dependent         -98.6705 213.3410
+
+Hypothesis test result:
+  likelihood-ratio:  16.8184 
+  p-value:  0.00209647 
+
+Model fitting method used was fitMk 
+
+R thinks both model optimizations converged.

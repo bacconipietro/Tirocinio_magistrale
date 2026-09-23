@@ -1,0 +1,17 @@
+MuSSE likelihood function:
+  * Parameter vector takes 12 elements:
+     - lambda1, lambda2, lambda3, mu1, mu2, mu3, q12, q13, q21, q23,
+       q31, q32
+  * Function takes arguments (with defaults)
+     - pars: Parameter vector
+     - condition.surv [TRUE]: Condition likelihood on survial?
+     - root [ROOT.OBS]: Type of root treatment
+     - root.p [NULL]: Vector of root state probabilities
+     - intermediates [FALSE]: Also return intermediate values?
+  * Phylogeny with 189 tips and 188 nodes
+     - Taxa: 16CI1f_Psebet, 23spal_Amespa2, AA005_Amespa, ...
+  * Reference:
+     - FitzJohn (submitted)
+R definition:
+function (pars, condition.surv = TRUE, root = ROOT.OBS, root.p = NULL, 
+    intermediates = FALSE)  
